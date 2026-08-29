@@ -1,0 +1,2443 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="utf-8"/>
+ <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
+ <title>BC Coletivo</title>
+ <meta content="width=device-width,minimum-scale=1,initial-scale=1" name="viewport"/>
+ <meta content="#000000" name="theme-color"/>
+ 
+ <link rel="icon" href="/static/uploads/logo.JPG" type="image/x-icon">
+ <link rel="apple-touch-icon" href="/static/uploads/logo.JPG">
+ 
+
+ 
+ <!-- Google Fonts: Yanone Kaffeesatz (Titulos Condensados) + Inter -->
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Cuprum:wght@400;600;700&family=Inter:wght@400;500;600;700&family=Yanone+Kaffeesatz:wght@500;600;700&display=swap" rel="stylesheet">
+ 
+ <!-- Theme CSS Base -->
+ <link href="/themes/meutimao_clean/assets/default_-bun.css" rel="stylesheet" type="text/css"/>
+ 
+ <style>
+   * { box-sizing: border-box; }
+   html, body { min-width: 0 !important; width: 100% !important; max-width: 100% !important; overflow-x: hidden !important; background: #e5e5e5; font-family: 'Inter', sans-serif; margin: 0; padding: 0; color: #222; }
+   #wrap { margin: 0 auto; background: #fff; max-width: 1100px; width: 100% !important; box-shadow: 0 0 15px rgba(0,0,0,0.15); min-height: 100vh; box-sizing: border-box !important; }
+   .container { max-width: 1100px !important; width: 100% !important; margin: 0 auto !important; box-sizing: border-box !important; }
+   
+   /* Header & Nav */
+   #header { background: #000; border-bottom: 4px solid #ffc107; padding: 0 20px; }
+   .header_inner { display: flex; justify-content: space-between; align-items: center; height: 60px; }
+   #bt_home { display: inline-flex !important; align-items: center !important; height: 60px !important; }
+    #bt_home a { color: #fff !important; font-family: 'Yanone Kaffeesatz', sans-serif !important; font-size: 30px !important; font-weight: 700 !important; text-decoration: none !important; text-transform: uppercase !important; letter-spacing: 1px !important; height: 100% !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; margin: 0 !important; padding: 0 !important; }
+    #bt_home a img { max-height: 42px !important; width: auto !important; object-fit: contain !important; display: block !important; vertical-align: middle !important; margin: auto 0 !important; }
+   
+   .link_apostas ul { list-style: none; padding: 0; margin: 0; display: flex; align-items: center; gap: 5px; }
+   .link_apostas ul li a { color: #fff !important; text-decoration: none !important; font-family: 'Yanone Kaffeesatz', sans-serif !important; font-size: 21px !important; font-weight: 500 !important; text-transform: uppercase !important; padding: 0 14px !important; height: 60px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; letter-spacing: 1px !important; transition: color 0.2s !important; }
+   .link_apostas ul li a:hover { color: #ffc107 !important; }
+   
+   /* Layout General */
+   #content { padding: 25px; }
+   
+   /* Badge Categoria */
+   .badge_cat { background: #000; color: #fff !important; font-family: 'Yanone Kaffeesatz', sans-serif !important; font-size: 15px; font-weight: 700; text-transform: uppercase; padding: 4px 10px 3px 10px; display: inline-flex !important; align-items: center !important; justify-content: center !important; line-height: 1 !important; letter-spacing: 1px; margin-bottom: 10px; border-radius: 2px; }
+   
+   /* Post Destaque (Post 1) */
+   .destaque_principal { margin-bottom: 35px; border-bottom: 2px solid #eee; padding-bottom: 25px; }
+   .destaque_principal .img_container { width: 100%; height: 420px; overflow: hidden; position: relative; border-radius: 4px; background: #111; }
+   .destaque_principal .img_container img { width: 100%; height: 100%; object-fit: cover; display: block; }
+   .destaque_principal h1 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 36px; font-weight: 700; line-height: 1.15; margin: 15px 0 10px 0; color: #111; letter-spacing: 0.3px; }
+   .destaque_principal h1 a { color: #111; text-decoration: none; }
+   .destaque_principal h1 a:hover { color: #ff9800; }
+   .destaque_principal p.meta { font-size: 13px; color: #777; margin: 0; }
+   
+   /* Grid de 2 Colunas (Posts 2+) */
+   .grid_noticias { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; }
+   .card_noticia { background: #fff; border: 1px solid #e2e2e2; border-radius: 4px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; }
+   .card_noticia:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+   .card_noticia .img_box { width: 100%; height: 210px; overflow: hidden; border-radius: 3px; background: #f5f5f5; margin: 10px 0; }
+   .card_noticia .img_box img { width: 100%; height: 100%; object-fit: cover; display: block; }
+   .card_noticia h2 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 25px; font-weight: 700; line-height: 1.2; margin: 5px 0 10px 0; color: #111; }
+   .card_noticia h2 a { color: #111; text-decoration: none; }
+   .card_noticia h2 a:hover { color: #ff9800; }
+   
+   /* Footer do Card */
+   .card_footer { display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #888; border-top: 1px solid #f0f0f0; padding-top: 10px; margin-top: auto; }
+   .stats { display: none !important; }
+   
+   /* Mobile Hamburger Button & Offcanvas */
+   .mobile-hamburger-btn { display: none; background: none; border: none; cursor: pointer; flex-direction: column; justify-content: space-between; width: 26px; height: 20px; padding: 0; }
+   .mobile-hamburger-btn .hamburger-bar { width: 100%; height: 3px; background-color: #fff; border-radius: 2px; transition: all 0.3s; }
+   
+   .mobile-menu-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.75); z-index: 99990; }
+   .mobile-menu-overlay.active { display: block; }
+   
+   .mobile-offcanvas { position: fixed; top: 0; left: -280px; width: 280px; height: 100%; background: #111; z-index: 99995; transition: left 0.3s ease; padding: 20px 15px; overflow-y: auto; box-shadow: 2px 0 12px rgba(0,0,0,0.5); }
+   .mobile-offcanvas.active { left: 0; }
+   .mobile-offcanvas-header { display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #ffc107; padding-bottom: 12px; margin-bottom: 15px; }
+   .mobile-offcanvas-title { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 24px; font-weight: 700; color: #fff; text-transform: uppercase; }
+   .mobile-offcanvas-close { background: none; border: none; color: #fff; font-size: 32px; cursor: pointer; line-height: 1; }
+   .mobile-offcanvas-list { list-style: none; padding: 0; margin: 0; }
+   .mobile-offcanvas-list li a { display: block; padding: 12px 10px; color: #fff; font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 21px; font-weight: 500; text-transform: uppercase; text-decoration: none; border-bottom: 1px solid #222; }
+   .mobile-offcanvas-list li a:hover { color: #ffc107; }
+
+   /* Footer do Site */
+   #footer { background: #000; color: #888; text-align: center; padding: 25px 0; margin-top: 40px; font-size: 14px; border-top: 3px solid #ffc107; }
+   #footer p { margin: 0; color: #fff; font-family: 'Inter', sans-serif; }
+   
+   /* Pagina de Post Interna */
+   .post_container { max-width: 820px; margin: 0 auto; padding: 10px 0; }
+   .post_container h1 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 42px; font-weight: 700; line-height: 1.1; margin: 15px 0; color: #111; }
+   .post_container .post_meta { font-size: 14px; color: #666; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+   .post_container .post_content { font-size: 17px; line-height: 1.7; color: #333; }
+   .post_container .post_content p { margin-bottom: 18px; }
+   .post_container .post_content img { max-width: 100%; height: auto; display: block; margin: 25px auto; border-radius: 4px; }
+   
+   /* REGRAS EXCLUSIVAS PARA CELULAR (MOBILE RESPONSIVE) */
+   @media screen and (max-width: 768px) {
+       #wrap { box-shadow: none !important; }
+       #header { padding: 0 15px !important; }
+       .header_inner { display: flex !important; flex-direction: row !important; justify-content: flex-start !important; align-items: center !important; gap: 15px !important; height: 55px !important; padding: 0 !important; }
+       
+       .mobile-hamburger-btn { display: flex !important; }
+       
+       #bt_home { display: inline-flex !important; align-items: center !important; }
+       #bt_home { height: 55px !important; display: inline-flex !important; align-items: center !important; }
+        #bt_home a { font-size: 22px !important; height: 100% !important; display: inline-flex !important; align-items: center !important; }
+        #bt_home a img { max-height: 35px !important; width: auto !important; vertical-align: middle !important; }
+       
+       /* ESCONDE TOTALMENTE O MENU E BOTÃO BUSCAR DA BARRA PRETA NO CELULAR */
+       #menu, .link_apostas, nav#menu { display: none !important; }
+       
+       #content { padding: 15px 12px !important; }
+       
+       .destaque_principal { margin-bottom: 25px !important; padding-bottom: 15px !important; }
+       .destaque_principal .img_container { height: 220px !important; }
+       .destaque_principal h1 { font-size: 26px !important; margin: 12px 0 8px 0 !important; }
+       
+       .grid_noticias { grid-template-columns: 1fr !important; gap: 18px !important; }
+       .card_noticia { padding: 12px !important; }
+       .card_noticia .img_box { height: 185px !important; }
+       .card_noticia h2 { font-size: 22px !important; margin: 8px 0 !important; }
+       
+       .post_container { padding: 0 !important; }
+       .post_container h1 { font-size: 28px !important; margin: 10px 0 !important; }
+       .post_container .post_content { font-size: 16px !important; line-height: 1.6 !important; }
+       
+       #search-overlay { padding: 1rem !important; }
+       #search-overlay > div { margin-top: 3rem !important; width: 100% !important; }
+       #search-input { font-size: 1.2rem !important; }
+   }
+ 
+    @media screen and (max-width: 768px) {
+        .item_noticia_vertical { flex-direction: column !important; gap: 10px !important; }
+        .item_noticia_vertical .thumb_box { width: 100% !important; height: 180px !important; }
+        .item_noticia_vertical .info_box h2 { font-size: 21px !important; }
+    }
+
+
+    /* ESTILIZAÇÃO COMPLETA DE CONTEÚDO DE POSTS E TÍTULOS (ESTILO MEU TIMÃO) */
+    .post_content { font-size: 17px; line-height: 1.8; color: #222; font-family: 'Inter', sans-serif; }
+    .post_content p { margin-bottom: 20px; line-height: 1.8; color: #222; }
+    .post_content h2 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 32px; font-weight: 700; color: #111; margin: 38px 0 16px 0; border-left: 5px solid #ffc107; padding-left: 14px; line-height: 1.2; text-transform: uppercase; letter-spacing: 0.5px; }
+    .post_content h3 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 26px; font-weight: 700; color: #111; margin: 30px 0 14px 0; border-left: 4px solid #000; padding-left: 12px; line-height: 1.25; text-transform: uppercase; }
+    .post_content h4 { font-family: 'Yanone Kaffeesatz', sans-serif; font-size: 22px; font-weight: 700; color: #222; margin: 24px 0 10px 0; text-transform: uppercase; }
+    .post_content strong, .post_content b { font-weight: 700; color: #000; }
+    .post_content a { color: #d32f2f; text-decoration: underline; font-weight: 600; }
+    .post_content a:hover { color: #b71c1c; text-decoration: none; }
+    .post_content ul, .post_content ol { margin: 20px 0; padding-left: 28px; }
+    .post_content li { margin-bottom: 10px; line-height: 1.7; color: #222; }
+    .post_content blockquote { background: #f9f9f9; border-left: 5px solid #ffc107; margin: 28px 0; padding: 18px 22px; font-style: italic; color: #444; font-size: 18px; line-height: 1.6; border-radius: 0 4px 4px 0; }
+    .post_content img { max-width: 100%; height: auto; display: block; margin: 25px auto; border-radius: 4px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+    .post_content iframe { max-width: 100%; margin: 25px auto; display: block; border-radius: 4px; }
+
+</style>
+
+    <!-- Código de Cabeçalho / Adsense Auto / Analytics da Configuração Global -->
+    
+
+</head>
+<body class="home">
+<div id="wrap">
+    <header id="header">
+ <div class="header_inner">
+     <button class="mobile-hamburger-btn" id="mobile-menu-toggle" aria-label="Abrir Menu">
+         <span class="hamburger-bar"></span>
+         <span class="hamburger-bar"></span>
+         <span class="hamburger-bar"></span>
+     </button>
+
+     <span id="bt_home">
+      <a href="/" title="Página inicial">
+          
+              <img src="/static/uploads/COnGRESSO-6.png.webp" alt="BC Coletivo" style="max-height: 42px; width: auto; object-fit: contain; display: block;" />
+          
+      </a>
+     </span>
+
+     <nav class="link_apostas" id="menu">
+      <ul>
+          
+              
+                  <li class="desktop-cat-item">
+                   <a href="/categoria/blog/">Blog</a>
+                  </li>
+              
+                  <li class="desktop-cat-item">
+                   <a href="/categoria/carros/">Carros</a>
+                  </li>
+              
+                  <li class="desktop-cat-item">
+                   <a href="/categoria/moto/">Moto</a>
+                  </li>
+              
+                  <li class="desktop-cat-item">
+                   <a href="/categoria/onibus/">Ônibus</a>
+                  </li>
+              
+                  <li class="desktop-cat-item">
+                   <a href="/categoria/guia-de-estradas/">Guia de Estradas</a>
+                  </li>
+              
+          
+          <li class="buscar">
+           <a href="#" id="bt_menu_buscar_click">BUSCAR</a>
+          </li>
+      </ul>
+     </nav>
+ </div>
+</header>
+
+<!-- Mobile Menu Overlay & Sidebar -->
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+
+<nav class="mobile-offcanvas" id="mobile-offcanvas">
+    <div class="mobile-offcanvas-header">
+        <span class="mobile-offcanvas-title">
+            
+                <img src="/static/uploads/COnGRESSO-6.png.webp" alt="BC Coletivo" style="max-height: 35px; width: auto; object-fit: contain; display: block;" />
+            
+        </span>
+        <button class="mobile-offcanvas-close" id="mobile-menu-close">&times;</button>
+    </div>
+    
+    <div style="padding: 10px 10px 15px 10px; border-bottom: 1px solid #222;">
+        <button id="mobile-search-trigger" style="width:100%; padding:10px; background:#ffc107; color:#000; font-family:'Yanone Kaffeesatz', sans-serif; font-size:19px; font-weight:700; border:none; border-radius:4px; cursor:pointer; text-transform:uppercase; display:flex; align-items:center; justify-content:center; gap:8px;">
+            🔍 BUSCAR NO SITE
+        </button>
+    </div>
+
+    <ul class="mobile-offcanvas-list">
+        <li><a href="/">PÁGINA INICIAL</a></li>
+        
+            
+                <li><a href="/categoria/blog/">Blog</a></li>
+            
+                <li><a href="/categoria/carros/">Carros</a></li>
+            
+                <li><a href="/categoria/moto/">Moto</a></li>
+            
+                <li><a href="/categoria/onibus/">Ônibus</a></li>
+            
+                <li><a href="/categoria/guia-de-estradas/">Guia de Estradas</a></li>
+            
+        
+    </ul>
+</nav>
+
+<!-- Overlay de Busca (Modal de Pesquisa) -->
+<div class="search-overlay" id="search-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:99999; padding:2rem;">
+    <button id="search-close" style="position:absolute; top:25px; right:35px; background:none; border:none; color:#fff; font-size:2.5rem; cursor:pointer; font-family:sans-serif; line-height:1;">&times;</button>
+    <div style="max-width:650px; margin: 4rem auto 0; text-align:center;">
+        <input type="text" id="search-input" placeholder="O que você está procurando?" style="width:100%; padding:1rem; font-size:1.6rem; border:none; border-bottom:2px solid #ffc107; background:transparent; color:#fff; outline:none; font-family:'Yanone Kaffeesatz', sans-serif;">
+        <div id="search-results" style="margin-top:2rem; text-align:left; max-height:60vh; overflow-y:auto; font-family:'Inter', sans-serif;"></div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const menuToggle = document.getElementById('mobile-menu-toggle');
+        const menuClose = document.getElementById('mobile-menu-close');
+        const offcanvas = document.getElementById('mobile-offcanvas');
+        const overlay = document.getElementById('mobile-menu-overlay');
+
+        function openMobileMenu() {
+            offcanvas.classList.add('active');
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMobileMenu() {
+            offcanvas.classList.remove('active');
+            overlay.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        if (menuToggle) menuToggle.addEventListener('click', openMobileMenu);
+        if (menuClose) menuClose.addEventListener('click', closeMobileMenu);
+        if (overlay) overlay.addEventListener('click', closeMobileMenu);
+
+        // Search Modal Logic
+        const searchBtn = document.getElementById('bt_menu_buscar_click');
+        const mobileSearchTrigger = document.getElementById('mobile-search-trigger');
+        const searchOverlay = document.getElementById('search-overlay');
+        const searchClose = document.getElementById('search-close');
+        const searchInput = document.getElementById('search-input');
+        const searchResults = document.getElementById('search-results');
+        let postsData = [];
+
+        function openSearchModal(e) {
+            if (e) e.preventDefault();
+            closeMobileMenu();
+            searchOverlay.style.display = 'block';
+            document.body.style.overflow = 'hidden';
+            searchInput.focus();
+            
+            if (postsData.length === 0) {
+                fetch('/posts.json')
+                    .then(response => response.json())
+                    .then(data => { postsData = data; })
+                    .catch(err => console.error('Erro ao carregar posts:', err));
+            }
+        }
+
+        if (searchBtn) searchBtn.addEventListener('click', openSearchModal);
+        if (mobileSearchTrigger) mobileSearchTrigger.addEventListener('click', openSearchModal);
+        
+        if (searchClose) {
+            searchClose.addEventListener('click', function() {
+                searchOverlay.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        }
+        
+        if (searchInput) {
+            searchInput.addEventListener('input', function(e) {
+                const query = e.target.value.toLowerCase();
+                searchResults.innerHTML = '';
+                if (query.length < 2) return;
+                
+                const filtered = postsData.filter(post => post.title.toLowerCase().includes(query));
+                
+                if (filtered.length === 0) {
+                    searchResults.innerHTML = '<p style="color:#aaa; text-align:center; padding:1rem;">Nenhum resultado encontrado.</p>';
+                    return;
+                }
+                
+                filtered.forEach(post => {
+                    const link = document.createElement('a');
+                    link.href = '/' + post.slug + '/';
+                    link.style.display = 'flex';
+                    link.style.gap = '15px';
+                    link.style.alignItems = 'center';
+                    link.style.padding = '12px 0';
+                    link.style.borderBottom = '1px solid #333';
+                    link.style.color = '#fff';
+                    link.style.textDecoration = 'none';
+                    
+                    let imgHtml = post.image ? `<img src="${post.image}" style="width:65px; height:65px; object-fit:cover; border-radius:4px;">` : `<div style="width:65px; height:65px; background:#333; border-radius:4px;"></div>`;
+                    
+                    link.innerHTML = imgHtml + `<div><div style="font-size:0.85rem; color:#ffc107; font-weight:bold; text-transform:uppercase;">${post.category || 'Notícia'}</div><div style="font-size:1.2rem; font-weight:700; font-family:'Yanone Kaffeesatz', sans-serif;">${post.title}</div></div>`;
+                    searchResults.appendChild(link);
+                });
+            });
+        }
+    });
+</script>
+    
+    <div id="content">
+        
+            
+            <!-- Post Destaque Principal (Post #1) -->
+            
+            <article class="destaque_principal">
+                <span class="badge_cat">
+                    Carros
+                </span>
+                <div class="img_container">
+                    <a href="/dicas-essenciais-para-administrar-seu-comercio-de-tintas-automotivas/">
+                        <img src="/static/uploads/dicas-essenciais-para-administrar-seu-comercio-de-tintas-automotivas.jpg" alt="Dicas essenciais para administrar seu comércio de tintas automotivas" />
+                    </a>
+                </div>
+                <h1>
+                    <a href="/dicas-essenciais-para-administrar-seu-comercio-de-tintas-automotivas/">Dicas essenciais para administrar seu comércio de tintas automotivas</a>
+                </h1>
+                <p class="meta">
+                    <time>26/08/2026 às 00:00</time>
+                </p>
+            </article>
+            
+            <!-- Grid de 2 Colunas para os demais posts (Posts 2+) -->
+            
+            <section class="grid_noticias">
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-completo-para-renovacao-de-placas-automotivas-em-ribeirao-preto/">
+                                <img src="/static/uploads/guia-completo-para-renovacao-de-placas-automotivas-em-ribeirao-preto_1786474799.jpg" alt="Guia completo para renovação de placas automotivas em Ribeirão Preto" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-completo-para-renovacao-de-placas-automotivas-em-ribeirao-preto/">Guia completo para renovação de placas automotivas em Ribeirão Preto</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>19/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/top-5-tecnicas-para-revitalizar-seu-veiculo-em-providence/">
+                                <img src="/static/uploads/top-5-tecnicas-para-revitalizar-seu-veiculo-em-providence.jpg" alt="Top 5 Técnicas para Revitalizar Seu Veículo em Providence" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/top-5-tecnicas-para-revitalizar-seu-veiculo-em-providence/">Top 5 Técnicas para Revitalizar Seu Veículo em Providence</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>17/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-um-especialista-juridico-pode-ajudar-em-concursos-do-setor-automotivo/">
+                                <img src="/static/uploads/como-um-especialista-juridico-pode-ajudar-em-concursos-do-setor-automotivo.jpg" alt="Como um especialista jurídico pode ajudar em concursos do setor automotivo?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-um-especialista-juridico-pode-ajudar-em-concursos-do-setor-automotivo/">Como um especialista jurídico pode ajudar em concursos do setor automotivo?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/tecnologia-embarcada-no-transporte-coletivo-como-a-eletronica-melhora-a-gestao-de-frotas/">
+                                <img src="/static/uploads/tecnologia-embarcada-no-transporte-coletivo-como-a-eletronica-melhora-a-gestao-de-frotas.jpg" alt="Tecnologia embarcada no transporte coletivo: como a eletrônica melhora a gestão de frotas" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/tecnologia-embarcada-no-transporte-coletivo-como-a-eletronica-melhora-a-gestao-de-frotas/">Tecnologia embarcada no transporte coletivo: como a eletrônica melhora a gestão de frotas</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>15/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/por-que-empresas-do-setor-automotivo-precisam-de-assessoria-fiscal-local/">
+                                <img src="/static/uploads/por-que-empresas-do-setor-automotivo-precisam-de-assessoria-fiscal-local.jpg" alt="Por que empresas do setor automotivo precisam de assessoria fiscal local?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/por-que-empresas-do-setor-automotivo-precisam-de-assessoria-fiscal-local/">Por que empresas do setor automotivo precisam de assessoria fiscal local?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>13/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Moto
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-o-melhor-servico-de-manutencao-veicular-perto-de-voce/">
+                                <img src="/static/uploads/como-escolher-o-melhor-servico-de-manutencao-veicular-perto-de-voce.jpg" alt="Como escolher o melhor serviço de manutenção veicular perto de você" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-o-melhor-servico-de-manutencao-veicular-perto-de-voce/">Como escolher o melhor serviço de manutenção veicular perto de você</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>11/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-garantir-a-inspecao-automotiva-correta-em-campo-grande/">
+                                <img src="/static/uploads/como-garantir-a-inspecao-automotiva-correta-em-campo-grande.jpg" alt="Como garantir a inspeção automotiva correta em Campo Grande" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-garantir-a-inspecao-automotiva-correta-em-campo-grande/">Como garantir a inspeção automotiva correta em Campo Grande</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>10/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/descubra-os-beneficios-das-mangueiras-automotivas-de-alta-performance/">
+                                <img src="/static/uploads/descubra-os-beneficios-das-mangueiras-automotivas-de-alta-performance.jpg" alt="Descubra os Benefícios das Mangueiras Automotivas de Alta Performance" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/descubra-os-beneficios-das-mangueiras-automotivas-de-alta-performance/">Descubra os Benefícios das Mangueiras Automotivas de Alta Performance</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>07/08/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-dicas-para-adquirir-seu-veiculo-com-seguranca-e-economia/">
+                                <img src="/static/uploads/melhores-dicas-para-adquirir-seu-veiculo-com-seguranca-e-economia.jpg" alt="Melhores dicas para adquirir seu veículo com segurança e economia" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-dicas-para-adquirir-seu-veiculo-com-seguranca-e-economia/">Melhores dicas para adquirir seu veículo com segurança e economia</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>31/07/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/entenda-melhor-o-que-e-controle-de-tracao/">
+                                <img src="/static/uploads/entenda-melhor-o-que-e-controle-de-tracao.jpg" alt="Entenda melhor o que é controle de tração" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/entenda-melhor-o-que-e-controle-de-tracao/">Entenda melhor o que é controle de tração</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>24/07/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-o-melhor-servico-de-funilaria-para-seu-carro/">
+                                <img src="/static/uploads/como-escolher-o-melhor-servico-de-funilaria-para-seu-carro.jpg" alt="Como escolher o melhor serviço de funilaria para seu carro" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-o-melhor-servico-de-funilaria-para-seu-carro/">Como escolher o melhor serviço de funilaria para seu carro</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>22/07/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-garantir-a-qualidade-do-seu-carro-em-vistorias-automotivas/">
+                                <img src="/static/uploads/como-garantir-a-qualidade-do-seu-carro-em-vistorias-automotivas.jpg" alt="Como garantir a qualidade do seu carro em vistorias automotivas" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-garantir-a-qualidade-do-seu-carro-em-vistorias-automotivas/">Como garantir a qualidade do seu carro em vistorias automotivas</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/07/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/5-vantagens-de-usar-software-de-gestao-em-lojas-de-autopecas/">
+                                <img src="/static/uploads/5-vantagens-de-usar-software-de-gestao-em-lojas-de-autopecas.jpg" alt="5 vantagens de usar software de gestão em lojas de autopeças" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/5-vantagens-de-usar-software-de-gestao-em-lojas-de-autopecas/">5 vantagens de usar software de gestão em lojas de autopeças</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>29/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/por-que-investir-em-tecnologia-para-lojas-de-autopecas/">
+                                <img src="/static/uploads/por-que-investir-em-tecnologia-para-lojas-de-autopecas.jpg" alt="Por que investir em tecnologia para lojas de autopeças?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/por-que-investir-em-tecnologia-para-lojas-de-autopecas/">Por que investir em tecnologia para lojas de autopeças?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>29/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/qual-a-melhor-forma-de-receber-pecas-automotivas-com-urgencia/">
+                                <img src="/static/uploads/qual-a-melhor-forma-de-receber-pecas-automotivas-com-urgencia.jpg" alt="Qual a melhor forma de receber peças automotivas com urgência?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/qual-a-melhor-forma-de-receber-pecas-automotivas-com-urgencia/">Qual a melhor forma de receber peças automotivas com urgência?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>19/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-rapido-para-configurar-o-ar-refrigerado-no-seu-veiculo/">
+                                <img src="/static/uploads/guia-rapido-para-configurar-o-ar-refrigerado-no-seu-veiculo.jpg" alt="Guia rápido para configurar o ar refrigerado no seu veículo" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-rapido-para-configurar-o-ar-refrigerado-no-seu-veiculo/">Guia rápido para configurar o ar refrigerado no seu veículo</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Guia de Estradas
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-rapido-para-acumular-saldo-em-jogos-de-automobilismo-online/">
+                                <img src="/static/uploads/guia-rapido-para-acumular-saldo-em-jogos-de-automobilismo-online.jpg" alt="Guia rápido para acumular saldo em jogos de automobilismo online" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-rapido-para-acumular-saldo-em-jogos-de-automobilismo-online/">Guia rápido para acumular saldo em jogos de automobilismo online</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>14/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/por-que-a-manutencao-dos-assentos-automotivos-melhora-o-valor-do-seu-carro/">
+                                <img src="/themes/meutimao_clean/assets/lazy_-bun.gif" alt="Por que a manutenção dos assentos automotivos melhora o valor do seu carro?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/por-que-a-manutencao-dos-assentos-automotivos-melhora-o-valor-do-seu-carro/">Por que a manutenção dos assentos automotivos melhora o valor do seu carro?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>14/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Moto
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/por-que-optar-por-um-motorista-reservado-em-belo-horizonte/">
+                                <img src="/static/uploads/por-que-optar-por-um-motorista-reservado-em-belo-horizonte.jpg" alt="Por que optar por um motorista reservado em Belo Horizonte?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/por-que-optar-por-um-motorista-reservado-em-belo-horizonte/">Por que optar por um motorista reservado em Belo Horizonte?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>12/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-a-lavadora-ideal-para-seu-carro-com-alta-pressao/">
+                                <img src="/static/uploads/como-escolher-a-lavadora-ideal-para-seu-carro-com-alta-pressao.jpg" alt="Como escolher a lavadora ideal para seu carro com alta pressão" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-a-lavadora-ideal-para-seu-carro-com-alta-pressao/">Como escolher a lavadora ideal para seu carro com alta pressão</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>02/06/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-o-melhor-servico-para-regularizar-veiculos-em-catalao/">
+                                <img src="/static/uploads/como-escolher-o-melhor-servico-para-regularizar-veiculos-em-catalao.jpg" alt="Como escolher o melhor serviço para regularizar veículos em Catalão" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-o-melhor-servico-para-regularizar-veiculos-em-catalao/">Como escolher o melhor serviço para regularizar veículos em Catalão</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>31/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/veiculos-ideais-para-tours-inesqueciveis-em-fernando-de-noronha/">
+                                <img src="/static/uploads/veiculos-ideais-para-tours-inesqueciveis-em-fernando-de-noronha.jpg" alt="Veículos ideais para tours inesquecíveis em Fernando de Noronha" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/veiculos-ideais-para-tours-inesqueciveis-em-fernando-de-noronha/">Veículos ideais para tours inesquecíveis em Fernando de Noronha</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>30/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/modelos-em-escala-5-curiosidades-sobre-replicas-de-onibus-colecionaveis/">
+                                <img src="/static/uploads/modelos-em-escala-5-curiosidades-sobre-replicas-de-onibus-colecionaveis.jpg" alt="Modelos em escala: 5 curiosidades sobre réplicas de ônibus colecionáveis" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/modelos-em-escala-5-curiosidades-sobre-replicas-de-onibus-colecionaveis/">Modelos em escala: 5 curiosidades sobre réplicas de ônibus colecionáveis</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>30/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Guia de Estradas
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/transformacoes-visuais-que-valorizam-carreiras-no-mercado-de-carros/">
+                                <img src="/static/uploads/transformacoes-visuais-que-valorizam-carreiras-no-mercado-de-carros.jpg" alt="Transformações visuais que valorizam carreiras no mercado de carros" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/transformacoes-visuais-que-valorizam-carreiras-no-mercado-de-carros/">Transformações visuais que valorizam carreiras no mercado de carros</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>28/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Guia de Estradas
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/5-dicas-essenciais-para-limpar-tapetes-de-carro-na-regiao-de-bela-vista/">
+                                <img src="/static/uploads/5-dicas-essenciais-para-limpar-tapetes-de-carro-na-regiao-de-bela-vista.jpg" alt="5 dicas essenciais para limpar tapetes de carro na região de Bela Vista" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/5-dicas-essenciais-para-limpar-tapetes-de-carro-na-regiao-de-bela-vista/">5 dicas essenciais para limpar tapetes de carro na região de Bela Vista</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>22/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-pneus-para-carros-eletricos/">
+                                <img src="/static/uploads/como-escolher-pneus-para-carros-eletricos.jpg" alt="Como Escolher Pneus Para Carros Elétricos" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-pneus-para-carros-eletricos/">Como Escolher Pneus Para Carros Elétricos</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-monitorar-veiculos-da-sua-frota-com-tecnologia-avancada/">
+                                <img src="/static/uploads/como-monitorar-veiculos-da-sua-frota-com-tecnologia-avancada.jpg" alt="Como monitorar veículos da sua frota com tecnologia avançada" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-monitorar-veiculos-da-sua-frota-com-tecnologia-avancada/">Como monitorar veículos da sua frota com tecnologia avançada</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>19/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/os-erros-mais-comuns-ao-escolher-um-rastreador-veicular/">
+                                <img src="/static/uploads/os-erros-mais-comuns-ao-escolher-um-rastreador-veicular.jpg" alt="Os Erros Mais Comuns ao Escolher um Rastreador Veicular" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/os-erros-mais-comuns-ao-escolher-um-rastreador-veicular/">Os Erros Mais Comuns ao Escolher um Rastreador Veicular</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>19/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/quais-os-melhores-roteiros-de-carro-para-visitar-a-cidade-das-flores/">
+                                <img src="/static/uploads/quais-os-melhores-roteiros-de-carro-para-visitar-a-cidade-das-flores.jpg" alt="Quais os melhores roteiros de carro para visitar a cidade das flores?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/quais-os-melhores-roteiros-de-carro-para-visitar-a-cidade-das-flores/">Quais os melhores roteiros de carro para visitar a cidade das flores?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>15/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-opcoes-de-transporte-coletivo-para-viagens-em-jundiai/">
+                                <img src="/static/uploads/melhores-opcoes-de-transporte-coletivo-para-viagens-em-jundiai.jpg" alt="Melhores opções de transporte coletivo para viagens em Jundiaí" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-opcoes-de-transporte-coletivo-para-viagens-em-jundiai/">Melhores opções de transporte coletivo para viagens em Jundiaí</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>15/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-pneus-215-75-r17-5-economicos-para-sua-frota/">
+                                <img src="/static/uploads/como-escolher-pneus-215-75-r17-5-economicos-para-sua-frota.jpg" alt="Como escolher pneus 215/75 R17.5 econômicos para sua frota" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-pneus-215-75-r17-5-economicos-para-sua-frota/">Como escolher pneus 215/75 R17.5 econômicos para sua frota</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>06/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-o-melhor-servico-de-documentacao-veicular-no-rj/">
+                                <img src="/static/uploads/como-escolher-o-melhor-servico-de-documentacao-veicular-no-rj.jpg" alt="Como escolher o melhor serviço de documentação veicular no RJ" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-o-melhor-servico-de-documentacao-veicular-no-rj/">Como escolher o melhor serviço de documentação veicular no RJ</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>04/05/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Moto
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/5-dicas-para-contratar-entregadores-de-motos-eficientes-no-rj/">
+                                <img src="/static/uploads/5-dicas-para-contratar-entregadores-de-motos-eficientes-no-rj.jpg" alt="5 dicas para contratar entregadores de motos eficientes no RJ" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/5-dicas-para-contratar-entregadores-de-motos-eficientes-no-rj/">5 dicas para contratar entregadores de motos eficientes no RJ</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>27/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/quais-sao-os-beneficios-de-um-motor-remanufaturado-para-gol/">
+                                <img src="/static/uploads/quais-sao-os-beneficios-de-um-motor-remanufaturado-para-gol.jpg" alt="Quais são os benefícios de um motor remanufaturado para Gol?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/quais-sao-os-beneficios-de-um-motor-remanufaturado-para-gol/">Quais são os benefícios de um motor remanufaturado para Gol?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Moto
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-pratico-para-quem-exporta-carros-e-quer-sair-do-brasil/">
+                                <img src="/static/uploads/guia-pratico-para-quem-exporta-carros-e-quer-sair-do-brasil.jpg" alt="Guia prático para quem exporta carros e quer sair do Brasil" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-pratico-para-quem-exporta-carros-e-quer-sair-do-brasil/">Guia prático para quem exporta carros e quer sair do Brasil</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-opcoes-para-resgate-automotivo-no-rio-de-janeiro/">
+                                <img src="/static/uploads/melhores-opcoes-para-resgate-automotivo-no-rio-de-janeiro.jpg" alt="Melhores opções para resgate automotivo no Rio de Janeiro" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-opcoes-para-resgate-automotivo-no-rio-de-janeiro/">Melhores opções para resgate automotivo no Rio de Janeiro</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-pratico-tipos-de-oleo-essenciais-para-hatchbacks-e-sedas/">
+                                <img src="/static/uploads/guia-pratico-tipos-de-oleo-essenciais-para-hatchbacks-e-sedas.jpg" alt="Guia prático: tipos de óleo essenciais para hatchbacks e sedãs" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-pratico-tipos-de-oleo-essenciais-para-hatchbacks-e-sedas/">Guia prático: tipos de óleo essenciais para hatchbacks e sedãs</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>15/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/5-fragrancias-relaxantes-para-perfumar-seu-veiculo-com-estilo/">
+                                <img src="/static/uploads/5-fragrancias-relaxantes-para-perfumar-seu-veiculo-com-estilo.jpg" alt="5 fragrâncias relaxantes para perfumar seu veículo com estilo" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/5-fragrancias-relaxantes-para-perfumar-seu-veiculo-com-estilo/">5 fragrâncias relaxantes para perfumar seu veículo com estilo</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>15/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Moto
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/onde-encontrar-as-ultimas-novidades-automotivas-em-uberlandia/">
+                                <img src="/static/uploads/onde-encontrar-as-ultimas-novidades-automotivas-em-uberlandia.jpg" alt="Onde encontrar as últimas novidades automotivas em Uberlândia?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/onde-encontrar-as-ultimas-novidades-automotivas-em-uberlandia/">Onde encontrar as últimas novidades automotivas em Uberlândia?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/04/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/qual-o-pneu-ideal-275-80-r22-5-para-economia-e-durabilidade/">
+                                <img src="/static/uploads/qual-o-pneu-ideal-275-80-r22-5-para-economia-e-durabilidade.jpg" alt="Qual o pneu ideal 275/80 R22.5 para economia e durabilidade?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/qual-o-pneu-ideal-275-80-r22-5-para-economia-e-durabilidade/">Qual o pneu ideal 275/80 R22.5 para economia e durabilidade?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>28/03/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/o-que-voce-precisa-saber-sobre-taxas-veiculares-este-ano/">
+                                <img src="/static/uploads/o-que-voce-precisa-saber-sobre-taxas-veiculares-este-ano.jpg" alt="O que você precisa saber sobre taxas veiculares este ano" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/o-que-voce-precisa-saber-sobre-taxas-veiculares-este-ano/">O que você precisa saber sobre taxas veiculares este ano</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>08/03/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/protecao-veicular-cobre-roubo-furto-e-colisao-entenda/">
+                                <img src="/static/uploads/protecao-veicular-cobre-roubo-furto-e-colisao-entenda.jpg" alt="Proteção veicular cobre roubo, furto e colisão? Entenda" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/protecao-veicular-cobre-roubo-furto-e-colisao-entenda/">Proteção veicular cobre roubo, furto e colisão? Entenda</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/02/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Blog
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-pratico-para-restaurar-a-lataria-do-seu-carro-com-qualidade-local/">
+                                <img src="/static/uploads/guia-pratico-para-restaurar-a-lataria-do-seu-carro-com-qualidade-local.jpg" alt="Guia prático para restaurar a lataria do seu carro com qualidade local" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-pratico-para-restaurar-a-lataria-do-seu-carro-com-qualidade-local/">Guia prático para restaurar a lataria do seu carro com qualidade local</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>03/02/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Ônibus
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-oportunidades-de-trainee-e-estagio-no-setor-automotivo/">
+                                <img src="/static/uploads/melhores-oportunidades-de-trainee-e-estagio-no-setor-automotivo.jpg" alt="Melhores oportunidades de trainee e estágio no setor automotivo" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-oportunidades-de-trainee-e-estagio-no-setor-automotivo/">Melhores oportunidades de trainee e estágio no setor automotivo</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>02/02/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            Carros
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-escolher-o-melhor-servico-de-locacao-de-micro-onibus/">
+                                <img src="/static/uploads/como-escolher-o-melhor-servico-de-locacao-de-micro-onibus.jpg" alt="Como escolher o melhor serviço de locação de micro-ônibus?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-escolher-o-melhor-servico-de-locacao-de-micro-onibus/">Como escolher o melhor serviço de locação de micro-ônibus?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>29/01/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/diga-adeus-a-falta-de-bateria-estacoes-de-energia-para-viagens-longas/">
+                                <img src="/static/uploads/estacao-energia-portatil.webp" alt="Diga Adeus à Falta de Bateria: Estações de Energia para Viagens Longas" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/diga-adeus-a-falta-de-bateria-estacoes-de-energia-para-viagens-longas/">Diga Adeus à Falta de Bateria: Estações de Energia para Viagens Longas</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>24/01/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/qual-a-importancia-da-localizacao-e-do-acesso-ao-transporte-ao-buscar-um-novo-endereco/">
+                                <img src="/static/uploads/qual-a-importancia-da-localizacao-e-do-acesso-ao-transporte-ao-buscar-um-novo-endereco.jpg" alt="Qual a importância da localização e do acesso ao transporte ao buscar um novo endereço?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/qual-a-importancia-da-localizacao-e-do-acesso-ao-transporte-ao-buscar-um-novo-endereco/">Qual a importância da localização e do acesso ao transporte ao buscar um novo endereço?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>08/01/2026</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/5-beneficios-de-servicos-contabeis-para-oficinas-em-goiania/">
+                                <img src="/static/uploads/5-beneficios-de-servicos-contabeis-para-oficinas-em-goiania.jpg" alt="5 benefícios de serviços contábeis para oficinas em Goiânia" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/5-beneficios-de-servicos-contabeis-para-oficinas-em-goiania/">5 benefícios de serviços contábeis para oficinas em Goiânia</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>27/11/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/sinistro-de-seguro-em-rs-a-complexidade-da-gestao-de-riscos-no-transporte-de-onibus/">
+                                <img src="/static/uploads/mensagens-de-texto-de-jovem-triste-em-smart-para-depois-de-um-acidente-de-carro-na-estrada_637285-10951.jpg" alt="Sinistro de Seguro em RS: A Complexidade da Gestão de Riscos no Transporte de Ônibus" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/sinistro-de-seguro-em-rs-a-complexidade-da-gestao-de-riscos-no-transporte-de-onibus/">Sinistro de Seguro em RS: A Complexidade da Gestão de Riscos no Transporte de Ônibus</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>26/11/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/quais-as-consequencias-de-ter-a-carteira-de-motorista-bloqueada/">
+                                <img src="/static/uploads/quais-as-consequencias-de-ter-a-carteira-de-motorista-bloqueada.jpg" alt="Quais as consequências de ter a carteira de motorista bloqueada?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/quais-as-consequencias-de-ter-a-carteira-de-motorista-bloqueada/">Quais as consequências de ter a carteira de motorista bloqueada?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/11/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/isencao-de-ipva-para-pais-de-autistas-o-guia-pratico-para-a-conquista-do-beneficio-legal/">
+                                <img src="/static/uploads/jovem-feliz-segurando-as-chaves-do-carro_23-21483330081.jpg" alt="Isenção de IPVA para Pais de Autistas: O Guia Prático para a Conquista do Benefício Legal" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/isencao-de-ipva-para-pais-de-autistas-o-guia-pratico-para-a-conquista-do-beneficio-legal/">Isenção de IPVA para Pais de Autistas: O Guia Prático para a Conquista do Benefício Legal</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>03/11/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/isencoes-para-compra-de-carros-entenda-ipi-icms-ipva-e-mais/">
+                                <img src="/static/uploads/carro-pcd.jpg" alt="Isenções para compra de carros: entenda IPI, ICMS, IPVA e mais" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/isencoes-para-compra-de-carros-entenda-ipi-icms-ipva-e-mais/">Isenções para compra de carros: entenda IPI, ICMS, IPVA e mais</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>22/10/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-empresas-de-marketing-olfativo-em-2025-quem-entrega-as-experiencias-mais-marcantes/">
+                                <img src="/static/uploads/notas-empresas.jpg" alt="Melhores Empresas de Marketing Olfativo em 2025: Quem Entrega as Experiências Mais Marcantes" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-empresas-de-marketing-olfativo-em-2025-quem-entrega-as-experiencias-mais-marcantes/">Melhores Empresas de Marketing Olfativo em 2025: Quem Entrega as Experiências Mais Marcantes</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>21/10/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/black-decker-cm02-compacto-e-funcional-ideal-para-uso-diario/">
+                                <img src="/static/uploads/graos-de-cafe-escuros-em-uma-tigela-sobre-uma-mesa-marrom_176474-19881.jpg" alt="Black Decker CM02 Compacto e Funcional, Ideal para Uso Diário" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/black-decker-cm02-compacto-e-funcional-ideal-para-uso-diario/">Black Decker CM02 Compacto e Funcional, Ideal para Uso Diário</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>03/10/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/testes-de-carro/">
+                                <img src="/themes/meutimao_clean/assets/lazy_-bun.gif" alt="Testes de carro" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/testes-de-carro/">Testes de carro</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/09/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/motor-home-vs-trailer-qual-a-melhor-opcao-para-voce/">
+                                <img src="/static/uploads/Motor-Home.jpg" alt="Motor Home vs Trailer: Qual a Melhor Opção para Você?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/motor-home-vs-trailer-qual-a-melhor-opcao-para-voce/">Motor Home vs Trailer: Qual a Melhor Opção para Você?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/09/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar-3/">
+                                <img src="/themes/meutimao_clean/assets/lazy_-bun.gif" alt="Dicas de Como Trabalhar na Área de Transporte Escolar" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar-3/">Dicas de Como Trabalhar na Área de Transporte Escolar</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>09/09/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar-2/">
+                                <img src="/themes/meutimao_clean/assets/lazy_-bun.gif" alt="Dicas de Como Trabalhar na Área de Transporte Escolar" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar-2/">Dicas de Como Trabalhar na Área de Transporte Escolar</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>09/09/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar/">
+                                <img src="/themes/meutimao_clean/assets/lazy_-bun.gif" alt="Dicas de Como Trabalhar na Área de Transporte Escolar" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/dicas-de-como-trabalhar-na-area-de-transporte-escolar/">Dicas de Como Trabalhar na Área de Transporte Escolar</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>01/09/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/melhores-jogos-para-jogar-numa-viagem-de-onibus-aventura-e-diversao-no-seu-bolso/">
+                                <img src="/static/uploads/transporte-turismo-viagem-e-conceito-de-pessoas-jovem-feliz-sentada-no-onibus-de-viagem-com-smartphone_380164-1219471.jpg" alt="Melhores Jogos para Jogar Numa Viagem de Ônibus: Aventura e Diversão no seu Bolso" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/melhores-jogos-para-jogar-numa-viagem-de-onibus-aventura-e-diversao-no-seu-bolso/">Melhores Jogos para Jogar Numa Viagem de Ônibus: Aventura e Diversão no seu Bolso</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>24/08/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/explorando-o-sudeste-do-brasil-de-onibus-uma-aventura-por-roteiros-culturas-e-paisagens/">
+                                <img src="/static/uploads/14-10-2016-rio-de-janeiro-rj-foto-divulgacao-embratur-jpg.jpg" alt="Explorando o Sudeste do Brasil de Ônibus: Uma Aventura por Roteiros, Culturas e Paisagens" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/explorando-o-sudeste-do-brasil-de-onibus-uma-aventura-por-roteiros-culturas-e-paisagens/">Explorando o Sudeste do Brasil de Ônibus: Uma Aventura por Roteiros, Culturas e Paisagens</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>20/07/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/historia-do-transporte-regional-em-itupeva/">
+                                <img src="/static/uploads/11-anos-depois-a-Viacao-Piracicabana-comprou-onibus-Scania-detalhes.jpg" alt="História do Transporte Regional em Itupeva: Da Tradição à Modernidade" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/historia-do-transporte-regional-em-itupeva/">História do Transporte Regional em Itupeva: Da Tradição à Modernidade</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>07/07/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/caneca-ayrton-senna-f1-o-presente-criativo-para-fas-de-velocidade/">
+                                <img src="/static/uploads/Caneca-Ayrton-Senna-F1.jpg" alt="Caneca Ayrton Senna F1: O Presente Criativo para Fãs de Velocidade" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/caneca-ayrton-senna-f1-o-presente-criativo-para-fas-de-velocidade/">Caneca Ayrton Senna F1: O Presente Criativo para Fãs de Velocidade</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/07/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/oficina-de-injecao-eletronica-em-sao-paulo-seu-carro-em-boas-maos/">
+                                <img src="/static/uploads/maos-de-mecanico-de-manutencao-de-um-carro_1170-12721.jpg" alt="Oficina de Injeção Eletrônica em São Paulo: Seu Carro em Boas Mãos!" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/oficina-de-injecao-eletronica-em-sao-paulo-seu-carro-em-boas-maos/">Oficina de Injeção Eletrônica em São Paulo: Seu Carro em Boas Mãos!</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/07/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/tap-de-transporte-aereo-portugueses-uma-jornada-pela-excelencia-nos-ceus/">
+                                <img src="/static/uploads/aviao-voando-no-ceu-azul-com-nuvens-conceito-de-viagens-e-transporte_273003-5271.avif" alt="TAP de Transporte Aéreo Portugueses: Uma Jornada Pela Excelência nos Céus" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/tap-de-transporte-aereo-portugueses-uma-jornada-pela-excelencia-nos-ceus/">TAP de Transporte Aéreo Portugueses: Uma Jornada Pela Excelência nos Céus</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/transporte-no-brasil-e-o-papel-da-tabela-fipe/">
+                                <img src="/static/uploads/carro-azul-em-speed-motion-estilo-stretch_53876-126850.avif" alt="Transporte no Brasil e o Papel da Tabela FIPE" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/transporte-no-brasil-e-o-papel-da-tabela-fipe/">Transporte no Brasil e o Papel da Tabela FIPE</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-completo-sobre-rodizios-de-carros-e-transportes-em-sao-paulo/">
+                                <img src="/static/uploads/veiculo-de-caminhao-com-reboques-no-fundo_342744-1297.avif" alt="Guia Completo sobre Rodízios de Carros e Transportes em São Paulo" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-completo-sobre-rodizios-de-carros-e-transportes-em-sao-paulo/">Guia Completo sobre Rodízios de Carros e Transportes em São Paulo</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/cnh-e-setor-automotivo-mobilidade-tecnologia-e-cidadania-no-transito/">
+                                <img src="/static/uploads/pessoa-que-se-prepara-para-obter-a-carta-de-conducao_23-2150167552.avif" alt="CNH e Setor Automotivo: Mobilidade, Tecnologia e Cidadania no Trânsito" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/cnh-e-setor-automotivo-mobilidade-tecnologia-e-cidadania-no-transito/">CNH e Setor Automotivo: Mobilidade, Tecnologia e Cidadania no Trânsito</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/transportes-o-motor-do-progresso-social-e-economico/">
+                                <img src="/static/uploads/homem-de-tiro-completo-andando-pela-frota-de-caminhoes_23-2149426496-1.avif" alt="Transportes: O Motor do Progresso Social e Econômico" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/transportes-o-motor-do-progresso-social-e-economico/">Transportes: O Motor do Progresso Social e Econômico</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>23/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/roborock-s8-pro-ultra/">
+                                <img src="/static/uploads/Roborock-S8-Pro-Ultra-1.jpg" alt="Roborock S8 Pro Ultra: O Aliado Perfeito para Manter Sua Garagem e Carro Impecáveis" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/roborock-s8-pro-ultra/">Roborock S8 Pro Ultra: O Aliado Perfeito para Manter Sua Garagem e Carro Impecáveis</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/em-destaque-as-ultimas-noticias-sobre-onibus-no-brasil-e-no-mundo/">
+                                <img src="/static/uploads/um-dia-util-de-fabricacao-de-onibus-automatico-moderno-com-trabalhadores-de-carros-inacabados-em-fundo-de-pecas-automotivas-uniformes-de-protecao_645730-2931.jpg" alt="Em Destaque: As Últimas Notícias sobre Ônibus no Brasil e no Mundo" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/em-destaque-as-ultimas-noticias-sobre-onibus-no-brasil-e-no-mundo/">Em Destaque: As Últimas Notícias sobre Ônibus no Brasil e no Mundo</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/a-importancia-do-oleo-para-o-motor-dos-veiculos-tudo-o-que-voce-precisa-saber/">
+                                <img src="/static/uploads/oleo-motor.jpg" alt="A Importância do Óleo para o Motor dos Veículos: Tudo o Que Você Precisa Saber" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/a-importancia-do-oleo-para-o-motor-dos-veiculos-tudo-o-que-voce-precisa-saber/">A Importância do Óleo para o Motor dos Veículos: Tudo o Que Você Precisa Saber</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>16/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/as-miniaturas-de-onibus-mais-caras-do-mundo-um-universo-de-luxo-em-escala-reduzida/">
+                                <img src="/static/uploads/transporte-e-logistica-de-produtos_23-2151541856.avif" alt="As Miniaturas de Ônibus Mais Caras do Mundo: Um Universo de Luxo em Escala Reduzida" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/as-miniaturas-de-onibus-mais-caras-do-mundo-um-universo-de-luxo-em-escala-reduzida/">As Miniaturas de Ônibus Mais Caras do Mundo: Um Universo de Luxo em Escala Reduzida</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>14/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/tudo-sobre-o-retentor-do-motor-sintomas-de-defeito-e-como-resolver/">
+                                <img src="/static/uploads/retentores.jpg" alt="Tudo Sobre o Retentor do Motor: Sintomas de Defeito e Como Resolver" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/tudo-sobre-o-retentor-do-motor-sintomas-de-defeito-e-como-resolver/">Tudo Sobre o Retentor do Motor: Sintomas de Defeito e Como Resolver</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>13/06/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/o-papel-dos-despachantes-no-setor-automotivo-e-de-transporte-rodoviario/">
+                                <img src="/static/uploads/mulher-recebendo-sua-carteira-de-motorista_23-2149891362.avif" alt="O Papel dos Despachantes no Setor Automotivo e de Transporte Rodoviário" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/o-papel-dos-despachantes-no-setor-automotivo-e-de-transporte-rodoviario/">O Papel dos Despachantes no Setor Automotivo e de Transporte Rodoviário</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>30/05/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/museu-perto-de-mim-a-paixao-pelo-automobilismo-em-exposicao-permanente/">
+                                <img src="/static/uploads/fundo-de-vagao-de-passageiros-vintage-com-simbolos-de-exposicao-ilustracao-vetorial-realista_1284-831361.jpg" alt="Museu Perto de Mim: A Paixão pelo Automobilismo em Exposição Permanente" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/museu-perto-de-mim-a-paixao-pelo-automobilismo-em-exposicao-permanente/">Museu Perto de Mim: A Paixão pelo Automobilismo em Exposição Permanente</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>27/05/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/a-historia-da-av-paulista/">
+                                <img src="/static/uploads/av-paulista.jpg" alt="A história da Av. Paulista?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/a-historia-da-av-paulista/">A história da Av. Paulista?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>24/05/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/frases-para-oficina-mecanica-destaque-seu-negocio/">
+                                <img src="/static/uploads/frases-para-oficina-mecanica-1.jpg" alt="As Melhores Frases para Destacar Sua Oficina Mecânica" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/frases-para-oficina-mecanica-destaque-seu-negocio/">As Melhores Frases para Destacar Sua Oficina Mecânica</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>07/05/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/comparativo-onibus-bh-salvador-vs-outros-meios-de-transporte/">
+                                <img src="/static/uploads/mulher-motorista-de-camiao-a-trabalhar_23-21515617991.jpg" alt="Comparativo: Ônibus BH Salvador vs. Outros Meios de Transporte" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/comparativo-onibus-bh-salvador-vs-outros-meios-de-transporte/">Comparativo: Ônibus BH Salvador vs. Outros Meios de Transporte</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>21/03/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/historia-dos-onibus-voce-sabe-como-este-modo-de-transporte-originou/">
+                                <img src="/static/uploads/Historia-dos-Onibus.jpg" alt="História dos Ônibus: Você Sabe Como Este Modo de Transporte Originou?" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/historia-dos-onibus-voce-sabe-como-este-modo-de-transporte-originou/">História dos Ônibus: Você Sabe Como Este Modo de Transporte Originou?</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>18/02/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/concessionarias-e-revendedores-de-veiculos/">
+                                <img src="/static/uploads/Revendedores-de-Veiculos-1.jpg" alt="Soluções para Concessionárias e Revendedores de Veículos, Criadas para Expandir o Alcance e Aumentar as Vendas" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/concessionarias-e-revendedores-de-veiculos/">Soluções para Concessionárias e Revendedores de Veículos, Criadas para Expandir o Alcance e Aumentar as Vendas</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>01/01/2025</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/mala-de-viagem-o-que-trazer-para-longas-viagens-de-carro/">
+                                <img src="/static/uploads/Mala-de-Viagem.jpg" alt="Mala de Viagem - O que trazer para longas viagens de carro" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/mala-de-viagem-o-que-trazer-para-longas-viagens-de-carro/">Mala de Viagem - O que trazer para longas viagens de carro</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>14/12/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/propaganda-para-oficina-mecanica-com-desconto-especial-a-armadilha-que-voce-deve-evitar/">
+                                <img src="/static/uploads/Oficina-mecanica.jpg" alt="Oficina mecânica com "desconto especial": a armadilha que você deve evitar!" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/propaganda-para-oficina-mecanica-com-desconto-especial-a-armadilha-que-voce-deve-evitar/">Oficina mecânica com "desconto especial": a armadilha que você deve evitar!</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>18/11/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/voce-pode-dirigir-com-uma-roda-rachada/">
+                                <img src="/static/uploads/roda-rachada.jpg" alt="É Seguro Dirigir com uma Roda Rachada? Tudo o que Você Precisa Saber" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/voce-pode-dirigir-com-uma-roda-rachada/">É Seguro Dirigir com uma Roda Rachada? Tudo o que Você Precisa Saber</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>01/11/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/radio-px-a-voz-confiavel-nas-estradas/">
+                                <img src="/static/uploads/Radio-PX.jpg" alt="Rádio PX: A Voz Confiável nas Estradas" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/radio-px-a-voz-confiavel-nas-estradas/">Rádio PX: A Voz Confiável nas Estradas</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>24/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/guia-de-vitoria-dicas-e-servicos-automotivos-na-capital-capixaba/">
+                                <img src="/static/uploads/Guia-de-Vitoria-1.jpg" alt="Guia de Vitória: Melhores Dicas e Serviços Automotivos na Capital Capixaba" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/guia-de-vitoria-dicas-e-servicos-automotivos-na-capital-capixaba/">Guia de Vitória: Melhores Dicas e Serviços Automotivos na Capital Capixaba</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>11/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/sete-onibus-diferentes-em-um-unico-video-onibus-nao-sao-todos-iguais/">
+                                <img src="/static/uploads/Sete-onibus-diferentes-em-um-unico-video-Onibus-nao-sao.jpg" alt="Sete ônibus diferentes em um único vídeo! Ônibus não são todos iguais." loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/sete-onibus-diferentes-em-um-unico-video-onibus-nao-sao-todos-iguais/">Sete ônibus diferentes em um único vídeo! Ônibus não são todos iguais.</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/as-melhores-oficinas-mecanicas-de-carros-para-comprar-em-2024-nao-apresentam-defeitos-com-frequencia/">
+                                <img src="/static/uploads/As-melhores-oficinas-mecanicas-de-carros-para-comprar-em-2024.jpg" alt="As melhores oficinas mecânicas de carros para comprar em 2024 | NÃO APRESENTAM DEFEITOS COM FREQUÊNCIA." loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/as-melhores-oficinas-mecanicas-de-carros-para-comprar-em-2024-nao-apresentam-defeitos-com-frequencia/">As melhores oficinas mecânicas de carros para comprar em 2024 | NÃO APRESENTAM DEFEITOS COM FREQUÊNCIA.</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/movimento-de-onibus-na-maior-rodoviaria-do-brasil-a-rodoviaria-do-tiete-tem-de-tudo/">
+                                <img src="/static/uploads/MOVIMENTO-DE-ONIBUS-NA-MAIOR-RODOVIARIA-DO-BRASIL-A-RODOVIARIA.jpg" alt="MOVIMENTO DE ÔNIBUS NA MAIOR RODOVIÁRIA DO BRASIL!! A RODOVIÁRIA DO TIETÊ TEM DE TUDO" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/movimento-de-onibus-na-maior-rodoviaria-do-brasil-a-rodoviaria-do-tiete-tem-de-tudo/">MOVIMENTO DE ÔNIBUS NA MAIOR RODOVIÁRIA DO BRASIL!! A RODOVIÁRIA DO TIETÊ TEM DE TUDO</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/como-adquirir-um-carro-eletrico-usado-tudo-o-que-voce-precisa-saber-uber-carroseletricos/">
+                                <img src="/static/uploads/Como-adquirir-um-carro-eletrico-usado-Tudo-o-que.jpg" alt="Como adquirir um carro elétrico usado - Tudo o que você precisa saber #uber #carroselétricos" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/como-adquirir-um-carro-eletrico-usado-tudo-o-que-voce-precisa-saber-uber-carroseletricos/">Como adquirir um carro elétrico usado - Tudo o que você precisa saber #uber #carroselétricos</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/barbara-bandeira-carro-feat-dillaz/">
+                                <img src="/static/uploads/1725585933_maxresdefault.jpg" alt="Bárbara Bandeira - Carro (feat. Dillaz)" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/barbara-bandeira-carro-feat-dillaz/">Bárbara Bandeira - Carro (feat. Dillaz)</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+                <article class="card_noticia">
+                    <div>
+                        <span class="badge_cat">
+                            NOTÍCIA
+                        </span>
+                        
+                        <div class="img_box">
+                            <a href="/a-maior-feira-de-onibus-da-america-latina-grandes-novidades-de-onibus-do-brasil-lat-bus/">
+                                <img src="/static/uploads/A-MAIOR-FEIRA-DE-ONIBUS-DA-AMERICA-LATINA-GRANDES-NOVIDADES.jpg" alt="A MAIOR FEIRA DE ÔNIBUS DA AMÉRICA LATINA!! GRANDES NOVIDADES DE ÔNIBUS DO BRASIL LAT.BUS" loading="lazy" />
+                            </a>
+                        </div>
+                        
+                        <h2>
+                            <a href="/a-maior-feira-de-onibus-da-america-latina-grandes-novidades-de-onibus-do-brasil-lat-bus/">A MAIOR FEIRA DE ÔNIBUS DA AMÉRICA LATINA!! GRANDES NOVIDADES DE ÔNIBUS DO BRASIL LAT.BUS</a>
+                        </h2>
+                    </div>
+                    
+                    <div class="card_footer">
+                        <time>05/09/2024</time>
+                    </div>
+                </article>
+                
+            </section>
+            
+            
+        
+    </div>
+    
+    <footer id="footer">
+ <div class="container" style="max-width: 1100px; margin: 0 auto; padding: 30px 15px; text-align: center;">
+    
+    <!-- Redes Sociais da Configuração -->
+    <div class="footer_social" style="margin-bottom: 20px; display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+        
+        
+        
+        
+    </div>
+
+    <!-- Menu de Rodapé Configurado -->
+    
+
+    <!-- Descrição do Rodapé -->
+    
+    <div class="footer_description" style="max-width: 700px; margin: 0 auto 20px; color: #aaa; font-size: 14px; line-height: 1.6; font-family: 'Inter', sans-serif;">
+        Um espaço dedicado a compartilhar ideias, artigos e tutoriais. Nossa missão é entregar conteúdo de valor e com qualidade para todos os nossos leitores.
+    </div>
+    
+
+    <!-- Direitos Autorais Configurados -->
+    <div class="footer_copyright" style="color: #888; font-size: 13px; font-family: 'Inter', sans-serif;">
+        
+            BC Coletivo - Todos os Direitos Reservados
+        
+    </div>
+
+ </div>
+</footer>
+
+<!-- Código de Rodapé Personalizado / Scripts da Configuração Global -->
+
+
+<!-- Banner de Cookies Configurável -->
+
+</div>
+</body>
+</html>

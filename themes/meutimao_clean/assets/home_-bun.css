@@ -1,0 +1,25 @@
+@font-face {
+    font-family: 'Knockout48';
+    src: url('/fontes/Knockout-HTF48-Featherweight.eot');
+	src: local('☺'), 
+		 url('/fontes/Knockout-HTF48-Featherweight.woff') format('woff'), 
+		 url('/fontes/Knockout-HTF48-Featherweight.eot?#iefix') format('embedded-opentype'),
+         url('/fontes/Knockout-HTF48-Featherweight.ttf') format('truetype'),
+         url('/fontes/Knockout-HTF48-Featherweight.svg#Knockout48') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+    font-family: 'yanone_kaffeesatzlight';
+    src: url('/fontes/yanonekaffeesatz-light-webfont.eot');	
+    src: local('☺'), 
+		 url('/fontes/yanonekaffeesatz-light-webfont.woff') format('woff'), 
+		 url('/fontes/yanonekaffeesatz-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fontes/yanonekaffeesatz-light-webfont.ttf') format('truetype'),
+         url('/fontes/yanonekaffeesatz-light-webfont.svg#yanone_kaffeesatzlight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+	font-display: swap;
+}

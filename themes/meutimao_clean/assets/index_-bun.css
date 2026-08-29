@@ -1,0 +1,439 @@
+body #conteudo.container { width:auto; }
+
+#content{ padding-top:30px; }
+
+/* ################################# MOSAICO ################################# */
+#mosaico.home_especial{ width:calc(100% - 22px); }
+#mosaico article{ float: left; width:460px; min-height: 371px; margin:0 0 18px 0; position:relative; background: #fff; border: 1px solid #ddd; padding:10px; }
+#mosaico article.impar{ margin-right:18px; }
+#mosaico article figure{ position:relative; padding:0; margin:0; width:100%; height:240px; overflow:hidden;}
+#mosaico article img{ width:100%; height:auto; display:block; transition:transform 0.25s linear; transform:scale(1); }
+#mosaico article img:hover{ transform:scale(1.05); }
+#mosaico article a.link_over_node{ width:100%; height:100%; }
+
+#mosaico article div.chamada{ padding:10px 5px 0 5px; }
+#mosaico article div.chamada h2{ height: 61px; overflow: hidden; }
+#mosaico article div.chamada h2,
+#mosaico article div.chamada h2 a{ font-family: 'Knockout48'; font-size:28px; color:#000; }
+#mosaico article div.chamada h2 a:hover{ text-decoration:underline; }
+#mosaico article div.interacoes_artigo { margin-bottom: 5px; margin-top: 15px; }
+
+#mosaico div.banner_triplo { margin-top:30px; margin-bottom:30px; }
+#mosaico div.banner_triplo div.publicidade_970x250{ margin-bottom:30px; }
+
+
+
+#mosaico article div.header{ padding:15px 0; border-bottom:1px solid #eee; }
+#mosaico article div.header h4{ background: #000; padding: 9px; display: inline }
+#mosaico article div.header h4,
+#mosaico article div.header h4 a{ font-family: 'Yanone Kaffeesatz'; font-size: 20px; text-transform: uppercase; color: #fff; font-weight: 100; }
+#mosaico article div.header h4 a:hover{ text-decoration:underline; }
+#mosaico article div.header h4 span{ font-family:'Yanone Kaffeesatz'; color:#999; font-weight:100; font-size:14px; margin-left:3px; position:relative; top:-1px; }
+
+#mosaico article div.header p.totais{ float:right; font-size:13px; color:#666; }
+#mosaico article div.header p.totais time,
+#mosaico article div.header p.totais span{ font-family:'Cuprum'; margin-left:7px; font-size:14px; color:#888;}
+#mosaico article div.header p.totais span.comentarios_na_noticia:before { width:10px; height:11px; background-position:-112px -27px;}
+#mosaico article div.header p.totais span.data:before { width:12px; height:12px; background-position:-85px -23px;}
+#mosaico article div.header p.totais span.visitas:before { width:14px; height:12px; background-position:-135px -27px;}
+#mosaico article div.header p.totais time:before,
+#mosaico article div.header p.totais span:before { content:""; margin-right:3px; position:relative; top:2px; display:inline-block; background:url('/m-meutimao/img/sprite/geral-com-2x-minificado.png?v=7') no-repeat; overflow:hidden; text-indent:-9999px; }
+#mosaico article div.header p.totais time:before{ width:14px; height:12px; background-position:-85px -23px;}
+
+	
+#mosaico.home_especial article.unico{ width:calc(100% - 23px); float:none; clear:both; max-width: 1920px; margin: 0 auto 18px auto; }
+#mosaico.home_especial article.unico div.header{ position: absolute; top: 20px; left: 25px; z-index: 10; border: 0;}
+#mosaico.home_especial article.unico div.header p.totais{ display:none; }
+#mosaico.home_especial article.unico figure{ max-height:none; }
+#mosaico.home_especial article.unico div.info_mosaico{ position: absolute; bottom: 10px; width: calc(100% - 20px); padding: 0; } 
+#mosaico.home_especial article.unico div.info_mosaico div.interacoes_artigo{ position: absolute; top: -80px; left: calc(50% - 33px); margin-left: -40px; background: #fff; padding: 10px 10px 0px; }
+#mosaico.home_especial article.unico div.info_mosaico div.chamada { padding: 0; background: none; }
+#mosaico.home_especial article.unico div.info_mosaico div.chamada h2{ background:rgba(0,0,0,0.8); color: #fff; padding: 10px; }
+#mosaico.home_especial article.unico div.info_mosaico div.chamada h2 a{ color: #fff; }
+#mosaico.home_especial article.unico div.info_mosaico ul.sublinks{ background: rgba(0,0,0,0.8); margin-top:0; }
+#mosaico.home_especial article.unico div.info_mosaico ul.sublinks li,
+#mosaico.home_especial article.unico div.info_mosaico ul.sublinks li a{ color:#fff; }
+/* #mosaico.home_especial article.unico div.info_mosaico a.bt_like_interno.marcado em{ filter:invert(1); } */
+
+#mosaico article.unico{ width:960px; margin-bottom:18px; float:none; clear:both; }
+#mosaico article.unico div.chamada h2{ height:auto; padding-bottom: 5px;}
+#mosaico article.unico div.chamada h2,
+#mosaico article.unico div.chamada h2 a{ font-size: 46px; }
+#mosaico article.unico figure{ max-height:550px; height:auto; }
+#mosaico article.unico figure h3{ font-size: 40px; height: 46px; line-height: 46px; padding: 0 7px; }
+
+/* taboola reels 
+#mosaico article.taboola div.header{ margin-bottom: 10px; }
+#mosaico article.taboola div#taboola-mid-homepage-reco-reel { clear: none; height: 385px; }
+#mosaico article.taboola div.tbl-recommendation-reel { height:364px !important; }
+#mosaico article.taboola div.video-label-box { height:90px !important; }
+#mosaico article.taboola span.video-title{	text-decoration: none; max-height:none; font-size: 28px; font-family: 'Knockout48'; box-shadow: none; font-weight: normal; margin-top: 10px; line-height: 30px; 	 }
+*/
+ 
+
+#mosaico article ul.sublinks {padding: 20px 10px 10px 20px; border-top: 1px solid #ccc; margin-top: 10px; }
+#mosaico article ul.sublinks li { margin-bottom:7px; list-style:disc inside; }
+#mosaico article ul.sublinks li a{ color:#000; font-size:20px; }
+#mosaico article ul.sublinks li a:hover{ text-decoration:underline; }
+
+#mosaico article#live_twitch div.header h4{ background:#772ce8; }
+#mosaico article#live_youtube div.header h4{ background:#ca4943; }
+/*
+#mosaico article#live_youtube div.header div.subscribe{ position: absolute; top: 22px; right: 0; width: 214px; }
+#mosaico article#live_youtube div.header div.subscribe > p { float: left; margin-right: 9px; font-family: 'Yanone Kaffeesatz'; font-size: 20px; line-height: 26px; }
+*/
+#mosaico article#live_youtube div.header div.wrap_button{ height:55px; padding:8px; }
+#mosaico article#live_youtube.cola_fiel div.header div.wrap_button{ background:rgb(85,85,85); }
+
+
+#mosaico article iframe.chat_youtube{ margin-left:5px; float:right; }
+
+
+/* ################################# TITULO AREA ################################# */
+h3.tit_area{ color:#000; text-align:center; font-size:55px; margin-bottom:20px; }
+h3.tit_area a, h3.tit_area span{ color:#000; font-family:'Yanone Kaffeesatz'; font-weight:300; font-style:italic; text-transform:uppercase; }
+.ie h3.tit_area a, .ie h3.tit_area span{ font-family:yanone_kaffeesatzlight; }
+h3.tit_area a:before, h3.tit_area a:after, 
+h3.tit_area span:before, h3.tit_area span:after{ content:""; display:inline-block; width:47px; height:45px; text-indent:-9999px; background:url('/img/home2014/sprite-minificado.png') no-repeat 0 -176px; position:relative; top:3px; }
+h3.tit_area a:before, h3.tit_area span:before{ margin-right:10px; }
+h3.tit_area a:after, h3.tit_area span:after{ margin-left:22px; }
+
+
+
+/* ################################# ULTIMAS NOTICIAS ################################# */
+#ultimas_noticias_lista h3.tit_area a{ color:#909090; }
+#ultimas_noticias_lista{ background:#fff; padding:30px 0 25px; margin-bottom:70px; }
+#ultimas_noticias_lista h3.tit_ultimas_noticias{ margin-bottom:36px;}
+#ultimas_noticias_lista h3.tit_ultimas_noticias a{ display:block; margin:0 auto; width:480px; height:54px; background:url('/img/home2014/sprite-minificado.png') no-repeat 0 0; }
+
+#ultimas_noticias_lista div.pbmt_left{ float: left; width:336px; margin-right:25px;}
+#ultimas_noticias_lista div.banner_especial{ width:336px; }
+
+#ultimas_noticias_lista div.ultimas{ width:621px; float:right; }
+#ultimas_noticias_lista div.ultimas div.paginas{ position:relative; height:613px; }
+
+#ultimas_noticias_lista section.pagina article:first-child{ border-top:1px solid #f2f2f2; }
+#ultimas_noticias_lista article a.link_over_node{ width:100%; height:100%; }
+#ultimas_noticias_lista article { position: relative; padding:9px 5px; border-bottom:1px solid #f2f2f2; height: 21px; overflow: hidden; }
+#ultimas_noticias_lista article h3,
+#ultimas_noticias_lista article h3 a{ font-family:'Yanone Kaffeesatz'; font-weight:300; font-size:17px; line-height:21px; color:#000; max-height:21px; overflow: hidden; width:530px; }
+.ie #ultimas_noticias_lista article h3 a{ font-family:yanone_kaffeesatzlight; }
+#ultimas_noticias_lista section.pagina{ display:none; position:absolute; top:0; left:0; width:616px; background:#fff;}
+#ultimas_noticias_lista #pagina_0{ display:block; }
+#ultimas_noticias_lista article:hover h3{ text-decoration:underline; }
+#ultimas_noticias_lista article span.comentarios{ position:absolute; top:11px; right:2px; color:#666; font-family:'Knockout48'; }
+#ultimas_noticias_lista article span.comentarios a{ color:#666; font-family:'Knockout48'; }
+#ultimas_noticias_lista article span.comentarios:after{ content:""; display:inline-block; position:relative; top:1px; left:2px; background:url('/img/home2014/sprite-minificado.png') no-repeat 0 -55px; width:11px; height:11px; }
+#ultimas_noticias_lista article span.comentarios em{ display:none; }
+#ultimas_noticias_lista article time, 
+#ultimas_noticias_lista article time a{ padding-top:2px; font-size:16px; color:#666; font-family:'Knockout48'; text-transform:uppercase; float:left; width:48px; }
+#ultimas_noticias_lista article time span{ font-size:11px; margin-left:1px; position:relative; top:-3px; }
+#ultimas_noticias_lista div.paginacao{ text-align:right; margin-top:5px; height:20px; line-height:20px; vertical-align:middle; margin-right:6px; }
+#ultimas_noticias_lista div.paginacao a{ font-family:'Knockout48'; text-transform:uppercase; color:#000; }
+#ultimas_noticias_lista div.paginacao a.item_pagina:not(.ativo):not(.todas):hover{ background:#eee; }
+#ultimas_noticias_lista div.paginacao a.item_pagina{ padding:0 3px; }
+#ultimas_noticias_lista div.paginacao a.ativo{ color:#d9b909; }
+#ultimas_noticias_lista div.paginacao a.todas{ color:#909090; }
+#ultimas_noticias_lista div.paginacao a.todas:hover{ text-decoration:underline; }
+#ultimas_noticias_lista div.nova_data{ padding:9px 5px; text-transform:uppercase; font-family:'Knockout48'; background:#f2f2f2; padding-left:10px; border-bottom:1px solid #f2f2f2; height: 21px; font-size:17px; line-height:21px; color:#666; }
+
+#ultimas_noticias_lista article.top h3,
+#ultimas_noticias_lista article.top h3 a{ font-weight:bold; }
+#ultimas_noticias_lista article.top time a{ color:#000; }
+#ultimas_noticias_lista article.top span.comentarios a{ color:#000; }
+
+#ultimas_noticias_lista article h3 a:visited,
+#ultimas_noticias_lista article time a:visited,
+#ultimas_noticias_lista article span.comentarios a:visited{ color:#bbb; }
+
+#ultimas_noticias_lista article h3 a.visited{ color:#999; font-weight:300; }
+
+
+
+
+
+/* ################################# BANNER TRIPLO ################################# */
+div.banner_triplo { height:250px; margin-bottom:70px; padding:0 10px; text-align:center; }
+div.banner_triplo div.colection{ padding:0 10px; }
+div.banner_triplo div.bloco_colado.primeiro{ float:left; }
+div.banner_triplo div.bloco_colado.segundo{ float:right; }
+div.banner_triplo div.bloco_colado.terceiro{ margin:0 auto; width:300px;}
+
+
+
+
+/* ################################# JOGOS ################################# */
+#area_jogos { min-height:400px; margin-bottom:90px; }
+#area_jogos div.box_jogos{ width:313px; float: left; margin-right:20px; }
+#area_jogos div.box_jogos div.container_conteudo_box{ border-bottom:3px solid #333; margin-bottom:5px; overflow:hidden; height:239px; background:#fff; position:relative; }
+#area_jogos div.box_jogos p.veja_mais_info{ margin-top:5px; text-align:right; }
+#area_jogos div.box_jogos p.veja_mais_info a{ font-family:'Knockout48'; font-size:22px; text-transform:uppercase; color:#333; }
+#area_jogos div.box_jogos p.veja_mais_info a:hover{ color:#000; text-shadow:0 0 2px rgba(0,0,0,0.1); /* position:relative; top:-1px; right:1px; */ }
+#area_jogos div.box_jogos p.veja_mais_info a:after{ content:">"; font-family:'Knockout48'; font-size:22px; text-transform:uppercase; color:#333; }
+#area_jogos div.box_jogos h3{ background:#333; color:#fff;}
+#area_jogos div.box_jogos h3 a{ color:#fff; line-height:54px; height:54px; vertical-align:middle; padding:0 15px; display:block; font-family:'Knockout48'; text-transform:uppercase; font-size:25px; }
+/* #area_jogos div.box_jogos h3 a{ font-family:'Yanone Kaffeesatz'; font-weight:700; } */
+
+#area_jogos div#box_home_classificacao table{ width:100%; }
+#area_jogos div#box_home_classificacao table tr{ border-bottom:1px solid #a09797; }
+#area_jogos div#box_home_classificacao table td,
+#area_jogos div#box_home_classificacao table th{ line-height:39px; height:39px; vertical-align:middle; font-family:'Yanone Kaffeesatz'; font-weight:300; color:#6a6969; }
+.ie #area_jogos div#box_home_classificacao table td,
+.ie #area_jogos div#box_home_classificacao table th{ font-family:yanone_kaffeesatzlight; }
+#area_jogos div#box_home_classificacao table tr.corinthians{ background:#ffdc4f; }
+/*#area_jogos div#box_home_classificacao table tr th{ } */
+#area_jogos div#box_home_classificacao table thead tr th:first-child{ color:#fff; }
+#area_jogos div#box_home_classificacao table thead tr th,
+#area_jogos div#box_home_classificacao table thead tr td{ text-align:center; border-right:1px solid #a09797; }
+#area_jogos div#box_home_classificacao table thead tr td:last-child{ border-right:0; }
+#area_jogos div#box_home_classificacao table tbody tr th{ border-right:1px solid #a09797; text-align:left;}
+#area_jogos div#box_home_classificacao table tbody tr th:first-child{ border-right:0; padding-left:10px; }
+#area_jogos div#box_home_classificacao table tbody tr td{ padding:0 3px; text-align:center; border-right:1px solid #a09797; }
+#area_jogos div#box_home_classificacao table tbody tr td:last-child{ border-right:0; }
+#area_jogos div#home_ultimos_jogos { margin-right:0; }
+
+#area_jogos div.box_confronto{ border-right:0; width:auto; border-bottom:1px solid #c4c2ba; padding:3px 0; position:relative; border-radius:0; overflow:hidden; }
+#area_jogos div.box_confronto h5{ position: relative; width:214px; float:left; }
+#area_jogos div.box_confronto h5 img{ position:absolute; top:2px;}
+#area_jogos div.box_confronto h5 abbr{ color: #898484; font-family:'Yanone Kaffeesatz'; font-size:36px; position:absolute; top:5px;}
+#area_jogos div.box_confronto h5 abbr.mandante{ left: 0; }
+#area_jogos div.box_confronto h5 abbr.visitante{ right: 0; }
+#area_jogos div.box_confronto h5 em{ position:absolute; top:1px; font-family:'Knockout48'; font-size:36px; color:#c2c2c2; font-style:normal;}
+#area_jogos div.box_confronto h5 em.mandante{ left:85px; }
+#area_jogos div.box_confronto h5 em.visitante{ right:85px; }
+/* #area_jogos div.box_confronto h5 span{ display:block; text-indent:-9999px; background:url('/img/ico/icones_sprite.png?v=27') no-repeat -115px 0; width:15px; height:15px; position:absolute; top:8px; left:99px; } */
+#area_jogos div.box_confronto h5 span{ display:block; color: #999; font-family: arial; text-align: center; width:15px; height:15px; position:absolute; top:8px; left:99px; }
+
+
+
+#area_jogos div.box_confronto h4,
+#area_jogos div.box_confronto h4 a{ text-align:center; line-height:13px; color:#939393; font-size:13px;text-transform:uppercase; }
+
+#area_jogos div.box_confronto div.quando{ margin:3px 10px 1px 0; border-right:1px solid #edebe1; width:70px; float:left; padding:0 3px; }
+#area_jogos div.box_confronto div.quando h4{ margin-bottom:5px;}
+#area_jogos div.box_confronto div.quando time, 
+#area_jogos div.box_confronto div.quando time, 
+#area_jogos div.box_confronto div.quando time span{ display:block; text-align:center; width:70px; color:#898484;text-transform:uppercase; }
+#area_jogos div.box_confronto div.quando time span.dia{ font-size:45px; display:block; height:32px; line-height:45px; vertical-align:middle; font-family:'Knockout48'; }
+#area_jogos div.box_confronto div.quando time span.mes{ font-size:30px; font-family:'Yanone Kaffeesatz'; font-weight:300; text-transform:lowercase; margin-top:9px; }
+.ie #area_jogos div.box_confronto div.quando time span.mes{ font-family:yanone_kaffeesatzlight; }
+#area_jogos div.box_confronto div.quando time span.hora{ color:#939393; font-size:14px; }
+
+#area_jogos div.box_confronto{ background:none; box-shadow:none ; height: 73px;}
+#area_jogos div.box_confronto:hover{ background:#fffef9; box-shadow:none;}
+#area_jogos div.box_confronto a.link_area{ display:block; position:absolute; top:0; left:0; text-indent:-9999px; width:100%; height:100%;}
+#area_jogos div.box_confronto h5 span{top:12px;}
+#area_jogos div.box_confronto h5 img{top:6px;height:30px; width:30px; }
+#area_jogos div.box_confronto h5 img.mandante{ right:136px;}
+#area_jogos div.box_confronto h5 img.visitante{ left:136px;}
+#area_jogos div.box_confronto div.quando p.estadio{ text-align:center; text-align:center; width:78px; color:#939393;text-transform:uppercase; font-size:12px; }
+#area_jogos div.box_confronto div.placar { float: left; width:222px; }
+#area_jogos div.box_confronto div.placar p.campeonato { line-height:13px; margin:8px 0 3px 0; color:#939393;text-transform:uppercase; font-size:13px;}
+
+#area_jogos div.ultimo_jogo a.link_area{ display:block; position:absolute; top:0; left:0; text-indent:-9999px; width:300px; height:100px;}
+#area_jogos div.ultimo_jogo div.resultado{ height:38px; border-bottom:1px solid #edebe1; margin:0 10px; }
+#area_jogos div.ultimo_jogo div.resultado h4{ float:left; width:78px; margin-right:12px; padding-top:7px; }
+#area_jogos div.ultimo_jogo div.resultado h3{ width: 188px; position: absolute; right: 10px; }
+#area_jogos div.ultimo_jogo h5 abbr{ font-size:24px; }
+#area_jogos div.ultimo_jogo h5 em{ position:absolute; top:-5px; font-family:'Yanone Kaffeesatz'; font-size:30px; color:#333; font-style:normal;}
+#area_jogos div.ultimo_jogo h5 em.mandante{ left:67px; }
+#area_jogos div.ultimo_jogo h5 em.visitante{ right:67px; }
+#area_jogos div.ultimo_jogo h5 img{ position:absolute; top:3px; height:24px; width:24px; }
+#area_jogos div.ultimo_jogo h5 img.mandante{ right:130px;}
+#area_jogos div.ultimo_jogo h5 img.visitante{ left:130px;}
+
+
+
+/* ################################# VIDEOS ################################# */
+#ultimos_videos{ margin-bottom:70px; }
+#ultimos_videos div.embed{ height:360px; }
+
+/* ################################# VIDEO ESPECIAL ################################# */
+#area_video_especial{ margin-bottom:70px; }
+#area_video_especial div.embed{ height:500px; background:#fff url('/img/ico/loading.gif') no-repeat center center; }
+
+
+
+/* ################################# FORUM ################################# */
+#home_forum { min-height:400px; margin-bottom:90px; position:relative; }
+
+#home_forum div.apoio_patrocinador{ position:absolute; top:10px; right:0; }
+#home_forum div.apoio_patrocinador span.apoio{ top: 19px;}
+
+
+#home_forum #topicos_fixados{ margin-bottom:20px; padding-top: 20px; }
+#home_forum article{ width:223px; float: left; margin-right:29px; position:relative; }
+#home_forum article#topico_fixado_3{ margin-right:0; }
+#home_forum article figure{ margin:0; padding:0; border-radius:50%; overflow:hidden; margin-bottom:12px; border:10px solid #fff; }
+#home_forum article figure:hover{  border-color:#ffd;}
+
+#home_forum article figure a,
+#home_forum article figure img{ border-radius:50%; overflow:hidden; width:210px; height:210px; display: block; margin: 0;}
+
+#home_forum article figure img{ transition:transform 0.25s linear; transform:scale(1); }
+#home_forum article figure img:hover{ transform:scale(1.05); }
+#home_forum article.unico figure img:hover{ transform:scale(1.03); }
+
+#home_forum article h3{ border-top:2px solid #c6c1be; padding-top:8px; }
+#home_forum article h3 a{ font-family:'Yanone Kaffeesatz'; font-weight:300; font-size:21px; line-height:25px; text-transform:initial; color:#000; }
+.ie #home_forum article h3 a{ font-family:yanone_kaffeesatzlight; }
+#home_forum article h3 a:hover{ text-decoration:underline; }
+#home_forum article div.interacoes{ }
+#home_forum article div.interacoes .like_interno{ position:absolute; top:-6px; right:27px; }
+#home_forum article div.interacoes .dislike_interno{ position:absolute; top:20px; right:3px; }
+
+#home_forum article div.dados { float:right; text-align:right; margin:12px 0 5px 6px; }
+#home_forum article div.dados p{ color:#565151; font-family:'Knockout48'; margin-left:5px; }
+#home_forum article div.dados p span{ display:inline-block; text-align:left; text-indent:-9999px; background:url('/img/home2014/sprite-minificado.png') no-repeat; position:relative; top:4px; margin-left:1px; }
+#home_forum article div.dados p.respostas span{ width:11px; height:11px; background-position: -29px -55px; margin-right:2px; }
+#home_forum article div.dados p.views span{ width:14px; height:10px; background-position: -13px -55px; }
+
+#home_forum h3.tit_forum{ margin-bottom:46px; margin-top:10px;}
+#home_forum h3.tit_forum a{ display:block; margin:0 auto; width:468px; height:54px; background:url('/img/home2014/sprite-minificado.png') no-repeat 0 -69px; }
+
+#home_forum div.tabs{ }
+#home_forum div.tabs ul.opcoes{ height:47px; overflow:hidden;}
+#home_forum div.tabs ul.opcoes li{ float:left; background:#c6c5c1; position:relative; position:relative; top:4px; }
+#home_forum div.tabs ul.opcoes li a{ font-family:'Knockout48'; font-style:italic; line-height:47px; height:47px; vertical-align:middle; padding:0 30px 0 30px; display:block; font-size:24px; color:#4b4a47;text-transform:uppercase; }
+#home_forum div.tabs ul.opcoes li a:before{ content:""; color:#4b4a47; background:url('/img/home2014/sprite-minificado.png') no-repeat -16px 0; top:15px; left:20px; width:15px; height:15px; position: absolute; text-indent:-9999px; }
+#home_forum div.tabs ul.opcoes li.primeiro{ z-index:10; }
+#home_forum div.tabs ul.opcoes li.primeiro a{ z-index:10; }
+#home_forum div.tabs ul.opcoes li.primeiro:after{ z-index:10; }
+#home_forum div.tabs ul.opcoes li.segundo a{ padding-left:50px; }
+#home_forum div.tabs ul.opcoes li:after{ content:""; display:block; background: position:absolute; top:0; right:-27px; background:url('/img/home2014/sprite-minificado.png') no-repeat -40px -123px; width:27px; height:47px; }
+#home_forum div.tabs ul.opcoes li.ativo{ background:#fff; top:0; }
+#home_forum div.tabs ul.opcoes li.primeiro{ padding-left:5px; }
+#home_forum div.tabs ul.opcoes li.primeiro.ativo{ padding-left:14px; }
+#home_forum div.tabs ul.opcoes li.ativo:after{ content:""; display:block; position:absolute; top:0; right:-27px; background:url('/img/home2014/sprite-minificado.png') no-repeat 0 -123px; width:34px; height:47px; }
+#home_forum div.tabs ul.opcoes li.ativo a:before{ left: 21px; top:15px; background-position:0 0; }
+#home_forum div.tabs ul.opcoes li.segundo a:before{ left:32px;}
+#home_forum div.tabs ul.opcoes li.segundo.ativo a:before{ left:26px;}
+#home_forum div.tabs div.tabs_container{ background:#fff; padding:0 15px 5px 15px; height:292px; position:relative; width:948px; }
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos{ position:absolute; bottom:15px; right:15px; }
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos, 
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos a{ font-family:'Knockout48'; text-transform:uppercase; color:#909090; } 
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos a{ margin:0 5px; } 
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos a.criar:after{ content:"+"; font-size:16px; font-family:arial; }
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos a.ver:after{ content:">"; }
+#home_forum div.tabs div.tabs_container p.veja_mais_topicos a:hover{ text-decoration:underline; } 
+
+#home_forum div.tabs div.tabs_container div.tab_content{ position:absolute; top:10px; left:25px; width:938px !important; height:290px !important; }
+#home_forum div.tabs div.tabs_container div.hide{ display:none; }
+#home_forum div.tabs div.tabs_container ul li{ float:left; overflow:hidden; position:relative; width:287px; padding:20px 0 2px 0; margin-right:31px; border-bottom:2px solid #d2cfcf; }
+#home_forum div.tabs div.tabs_container ul li h4{ height:66px; margin-bottom:5px; padding-left:42px; position: relative; top:-2px; }
+#home_forum div.tabs div.tabs_container ul li h4 a{ font-size:18px; line-height:22px; text-transform:initial; font-family:'Yanone Kaffeesatz'; font-weight:300; color:#000; }
+.ie #home_forum div.tabs div.tabs_container ul li h4 a{ font-family:yanone_kaffeesatzlight; }
+#home_forum div.tabs div.tabs_container ul li:hover h4 a{ text-decoration:underline; }
+#home_forum div.tabs div.tabs_container ul li.terceiro{ margin-right:0; }
+#home_forum div.tabs div.tabs_container ul li.segunda_linha{ border-bottom:0; }
+#home_forum div.tabs div.tabs_container ul li img{ width:34px; height:34px; float:left; background:#fff; display:block; background#fff; float:left; margin-right:8px; -webkit-filter:grayscale(100%); filter:grayscale(100%); -ms-filter:grayscale(100%); -moz-filter:grayscale(100%); }
+#home_forum div.tabs div.tabs_container ul li p.data,
+#home_forum div.tabs div.tabs_container ul li p.data a{ font-family:'Knockout48'; font-size:15px; text-transform:uppercase; color:#000; margin-bottom:12px; }
+#home_forum div.tabs div.tabs_container ul li div.dados { float:right; text-align:right; margin:0; position:relative; top:-2px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p,
+#home_forum div.tabs div.tabs_container ul li div.dados p a{ color:#000; display:inline; font-family:'Knockout48'; font-size:15px; margin-left:3px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p span{ display:inline-block; text-align:left; text-indent:-9999px; background:url('/img/home2014/sprite-minificado.png') no-repeat; position:relative; top:4px; margin-left:1px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.respostas span{ width:11px; height:11px; background-position: -29px -55px; margin-right:2px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.views span{ width:14px; height:10px; background-position: -13px -55px; }
+
+#home_forum div.tabs div.tabs_container ul li p.data a:visited,
+#home_forum div.tabs div.tabs_container ul li div.dados p a:visited,
+#home_forum div.tabs div.tabs_container ul li h4 a:visited{ color:#888; }
+
+/*
+#home_antiga{ background:#fff; display:none; z-index:30; position:fixed; bottom:0; left:0; padding:20px; width:150px; box-shadow:2px -2px 15px rgba(0,0,0,0.5); }
+#home_antiga h3{ background:#666; text-align:center; padding:5px; color:#fff; text-transform:uppercase; font-size:16px; font-family:'Yanone Kaffeesatz'; margin-bottom:5px;}
+#home_antiga p{ font-size:14px; margin-bottom:5px; }
+#home_antiga a#bt_fechar_old_home{ background:#ffdc4f; color:#000; width:16px; position:absolute; top:0; right:0; text-align:center; height:16px; line-height:16px; vertical-align:middle; display:block; }
+#home_antiga a.opcao{ font-size:14px; line-height:30px; height:30px; vertical-align:middle; width:85px; color:#000; text-align:center; padding:0; text-decoration:underline; }
+#home_antiga a.opcao:hover{ text-decoration:none; }
+*/
+
+#home_forum div.tabs div.tabs_container ul li div.dados p.area{ display:inline-block; text-indent:-9999px; text-align:left; width:20px; height:20px; background:url('/img/ico/icones_sprite.png?v=27') no-repeat; top: -3px; position: relative; transform: scale(0.7); }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.off_topic{ background-position:0 -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.mercado_da_bola{ background-position:-20px -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.humor{ background-position:-40px -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.bate-papo_da_torcida{ background-position:-60px -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.estadio_do_corinthians{ background-position:-80px -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.analise_dos_jogos{ background-position:-100px -140px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.classificados_do_corinthians{ background-position:-20px -160px; }
+#home_forum div.tabs div.tabs_container ul li div.dados p.area.noticias{ background-position:-40px -160px; }
+
+
+
+/* ################################# COLUNISTAS ################################# */
+section#area_colunas{ margin-bottom:90px; }
+#lista_colunistas{ background:#fff; padding-top:40px; }
+#lista_colunistas li{ float:left; width:216px; margin-right:29px; position:relative; overflow:hidden; padding-bottom: 20px; }
+#lista_colunistas li div.header_artigo{ position:relative; min-height:100px; }
+#lista_colunistas li:last-child{ margin-right:0; }
+#lista_colunistas li figure{ margin:0 10px 0 0; padding:0; }
+#lista_colunistas li figure img{ width:100px; height:100px; background:#ffdc4f; border-radius:50%}
+/* #lista_colunistas li h4{ font-family:'Knockout48'; font-size:20px; text-transform:uppercase; height:45px; padding-top:55px; width:70px; padding-left:120px; } */
+#lista_colunistas li h4{ font-family: 'Knockout48'; font-size: 22px; text-transform: uppercase; width: 80px; position: absolute; bottom: 0; right: 24px; } 
+#lista_colunistas li h2{ padding-top:12px; min-height:68px; border-top:1px solid #000; margin-top:15px; font-size:19px; padding-bottom:20px; line-height:27px; }
+#lista_colunistas li a{ text-indent:-9999px; background:rgba(0,0,0,0.001); position:absolute; top:0; left:0; width:100%; height:100%; }
+
+
+
+/* ################################# LINK ESPECIAL ################################# */
+#link_especial_texto{ margin-bottom:40px; position:relative; top:-50px; }
+#link_especial_texto p{ margin-left:20px; }
+#link_especial_texto p a:before{ content:""; display:inline-block; width:0; height:0; border:10px solid transparent; border-left-color:black;}
+#link_especial_texto p a{ font-size:30px; color:#000; font-family:'Yanone Kaffeesatz';}
+#link_especial_texto p a:hover{ text-decoration:underline; }
+
+
+/* ################################# LIVE NA HOME ################################# */
+article#live_youtube.video_especial_header{ margin-top:100px; margin-bottom:0; }
+
+
+
+/* ################################# COLUNISTAS ################################# */
+section#area_bc{ margin-bottom:90px; }
+#lista_artigos_bc{ padding-top:40px; }
+#lista_artigos_bc li{ float:left; width:32%; margin-right:2%; position:relative; overflow:hidden; padding-bottom: 20px; }
+#lista_artigos_bc li div.header_artigo{ position:relative; min-height:100px; }
+#lista_artigos_bc li:last-child{ margin-right:0; }
+#lista_artigos_bc li figure{ margin:0; padding:0; text-align:center; }
+#lista_artigos_bc li figure img{ width:184px; height:184px; background:#ffdc4f; border-radius:50%; border: 5px solid #fff; }
+#lista_artigos_bc li figure img:hover{ border: 5px solid #ffdc4f; }
+/* #lista_colunistas li h4{ font-family:'Knockout48'; font-size:20px; text-transform:uppercase; height:45px; padding-top:55px; width:70px; padding-left:120px; } */
+#lista_artigos_bc li h2{ padding-top:12px; min-height:68px; border-top:1px solid #000; font-size:19px; padding-bottom:20px; width:282px; text-align:center; margin:15px auto 0 auto; }
+#lista_artigos_bc li h2 a{ text-decoration:underline; color:#000; line-height:27px; width:250px; }
+#lista_artigos_bc li h2 a:hover{ text-decoration:none; }
+/* #lista_artigos_bc li a{ text-indent:-9999px; background:rgba(0,0,0,0.001); position:absolute; top:0; left:0; width:100%; height:100%; } */
+
+
+/* ################################# SOCIAL ################################# 
+#area_social{ margin-bottom:90px;}
+#area_social #redes{ height:259px; padding:25px; background:#fff; }
+#area_social #redes > div{ width:300px; height:259px; background:#fff; }
+#area_social #redes div.plus{ float:left; }
+#area_social #redes div.twitter{ float:right; }
+#area_social #redes div.facebook{ margin:0 auto;}
+*/
+
+
+
+
+/* ################################# BOLAO ################################# 
+#area_bolao{ margin-bottom:0; }
+#area_bolao h3.tit_area{ display:none; }
+#wrap_bolao{ /* background:url('/img/banner/bolao-wrap-3000-tiny.png') no-repeat center center; }
+#wrap_bolao div.container{ height:300px; position:relative;}
+#wrap_bolao div.container a{ width:982px; height:300px; }
+#container_footer{ margin-top:0; }
+*/ 
+
+
+#mosaico article#doe_arena_corinthians { min-height:310px; }
+
+#doe_arena_corinthians #valor_arrecadado{ font-size: 110px; color: #fff; position: absolute; top: 96px; left: 230px; font-family: 'Knockout48'; }
+#doe_arena_corinthians #ultima_atualizacao{ font-size: 12px; color: #999; position: absolute; top: 234px; right: 20px;} 
+#doe_arena_corinthians #bt_doacao{  font-size: 29px; position: absolute; top: 123px; right: 32px; background: #ffdc4f; color: #000; border-radius: 10px; padding: 15px; border: 2px solid #000; font-family: 'Knockout48'; text-transform: uppercase; } 
+
+#doe_arena_corinthians #valor_arrecadado:hover,
+#doe_arena_corinthians #ultima_atualizacao:hover,
+#doe_arena_corinthians #bt_doacao:hover{ text-decoration:underline; }
+

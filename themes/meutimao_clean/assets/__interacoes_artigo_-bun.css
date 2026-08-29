@@ -1,0 +1,128 @@
+
+/* #################################### LIKES INTERNOS E INTERACOES #################################### */
+div.interacoes_artigo div.likes_internos{ display:inline-block; }
+
+div.interacoes.interacoes_artigo a.bt_like_interno{ background:none; text-decoration:none; width:22px; height:21px; display:inline-block; text-indent:-9999px; position:relative; float:left; }
+div.interacoes.interacoes_artigo a.bt_like_interno span{ background: no-repeat; color: #000; position: relative; top: 7px; font-size: 15px; font-family: Cuprum; text-decoration: none; font-weight: normal; padding: 0; }
+div.interacoes.interacoes_artigo a.bt_like_interno span:before{ background:none; display:none; }
+
+
+div.interacoes.interacoes_artigo a.bt_like_interno em{ width:22px; height:21px; position:relative; transition:transform 0.5s linear; cursor:pointer; }
+div.interacoes.interacoes_artigo a.bt_like_interno.marcado em{ transform:rotateY(180deg); }
+
+div.interacoes.interacoes_artigo a.bt_like_interno.like_interno{ margin-right:25px; }
+div.interacoes.interacoes_artigo a.bt_like_interno.like_interno em{ background-position:-67px -61px; }
+div.interacoes.interacoes_artigo a.bt_like_interno.like_interno.marcado em{ background-position:-67px -82px; }
+div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno{ position:relative; top:1px; }
+div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno em{ background-position:-89px -61px; }
+div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno.marcado em{ background-position:-89px -82px; }
+/*
+*/
+
+
+div.interacoes_artigo .visualizacoes em{ width: 25px; height: 17px; background-position: -198px -70px; position: relative; top: 3px;}
+
+div.interacoes_artigo .comentarios em,
+div.interacoes_artigo .responder_post em,
+div.interacoes_artigo .responder_comentario em{ width:24px; height:24px; background-position: -150px -66px; }
+div.interacoes_artigo .comentarios.marcado em{ background-position: -151px -90px; }
+
+div.interacoes_artigo .compartilhamentos em,
+div.interacoes_artigo .bt_share em{ width:22px; height:24px; background-position: -174px -66px; }
+div.interacoes_artigo .compartilhamentos.marcado em{ background-position: -175px -89px; }
+
+
+
+ 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) { 
+
+	div.interacoes.interacoes_artigo a.bt_like_interno.like_interno em{ background-position: -44px -119px; background-size:400px; width: 23px; height: 22px; top: -1px; }
+	div.interacoes.interacoes_artigo a.bt_like_interno.like_interno.marcado em{ background-position: -66.5px -119px; }
+	
+	div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno em{ background-position: -89.5px -120px; background-size:400px; width: 23px; height: 22px; top: -1px; }
+	div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno.marcado em{ background-position: -111px -120px; }
+	
+	div.interacoes_artigo .visualizacoes em{ background-position: -135px -122px; background-size: 400px; width: 26px; left: -1px; }
+	
+	div.interacoes_artigo .compartilhamentos em,
+	div.interacoes_artigo .bt_share em{ background-position:-23px -119px; background-size:400px; width: 20px; height: 23px; }
+	
+	div.interacoes_artigo .comentarios em,
+	div.interacoes_artigo .responder_post em,
+	div.interacoes_artigo .responder_comentario em{ background-position:0 -119px; background-size:400px; margin-right: 8px; width: 23px; height: 23px; top: -1px; }
+}
+
+
+div.interacoes_artigo > div.likes_internos,
+div.interacoes_artigo > span,
+div.interacoes_artigo > a { height: 45px; position: relative; width:22px; margin-right:25px; display: inline-block; }
+
+div.interacoes_artigo > div.likes_internos{ width:74px; margin-right:0; } 
+
+div.interacoes_artigo .likes_internos a em,
+div.interacoes_artigo .likes_internos form em,
+div.interacoes_artigo > span em,
+div.interacoes_artigo > a em{ background:url('/m-meutimao/img/sprite/geral-com-2x-minificado.png?v=9') no-repeat; display:block; text-indent:-9999px; float:left; }
+
+div.interacoes_artigo span em.amp{ text-indent:0; }
+div.interacoes_artigo span em.amp *{ opacity:0; }
+
+div.interacoes_artigo .likes_internos form em{ position:absolute; top:0; left:0; }
+
+div.interacoes_artigo form input{ cursor:pointer; display: block; z-index: 30; position: relative; width: 24px; height: 22px; opacity: 0; }
+
+
+div.interacoes_artigo form span,
+div.interacoes_artigo span span,
+div.interacoes_artigo a span{ color:#000; font-size:15px; font-family:'Cuprum'; position:absolute; top:27px; left:0; display:block; text-align:center; width:22px; text-indent:0; }
+div.interacoes_artigo form span.zerado,
+div.interacoes_artigo span span.zerado,
+div.interacoes_artigo a span.zerado{ opacity: 0.35; }
+
+div.interacoes_artigo label.texto_contagem{ font-size: 12px; display: block; font-family: 'Cuprum'; position: relative; top: -2px;}
+
+div.interacoes_artigo{ text-align:center; margin-bottom: 35px; margin-top: 25px; height: 55px; }
+div.interacoes_artigo.subtitled{  height:74px; }
+div.interacoes_artigo h5.titleBoxInteracoes { font-size: 14px; text-align: center; margin-bottom: 12px; text-transform: uppercase; text-indent: -6px; }
+
+div.interacoes.interacoes_artigo a.bt_like_interno.dislike_interno{ margin-right:0; }
+
+#conteudo_modal.compartilhar .preview {background:#f2f2f2; padding:10px; margin-bottom:25px; margin-top:0; }
+#conteudo_modal.compartilhar .preview img{ width: 100%; height: auto; display: block; }
+#conteudo_modal.compartilhar .preview span.mask{ height:248px; overflow:hidden; display:block; margin-bottom: 10px;}
+#conteudo_modal.compartilhar .preview h1{ font-size:24px; line-height:26px; margin-bottom:5px; }
+#conteudo_modal.compartilhar .preview h2{ font-size:16px; color:#888; line-height: 21px; }
+
+#conteudo_modal.compartilhar .copiar { height: 60px; margin-bottom:10px;}
+#conteudo_modal.compartilhar .copiar h4{ font-size:14px; color:#999; font-family: 'Cuprum'; }
+#conteudo_modal.compartilhar .copiar input{ float: left; border: 0; width: calc(100% - 100px); padding: 5px 10px 5px 0; border-bottom: 1px solid #000; font-family: 'Cuprum'; }
+#conteudo_modal.compartilhar .copiar a{ text-transform: uppercase; width: 65px; display: inline-block; background: #000; color: #fff; padding: 5px; float: right; text-align: center;}
+
+#conteudo_modal.compartilhar div.header_modal h2{ font-size: 26px; line-height: 26px; }
+	
+
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar h3{ text-align: center; padding-top: 10px; text-transform: uppercase;}
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar a{ display: inline-block; width:50px; text-indent: -9999px; height:50px; margin: 10px; border-radius: 15px; }
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar a.whatsapp{ background:url('/img/vetor/whatsapp-logo.svg') no-repeat; }
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar a.twitter{ background:url('/img/vetor/twitter-logo.svg') no-repeat; }
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar a.facebook{ background:url('/img/vetor/facebook-logo.svg') no-repeat; }
+
+#conteudo_modal.compartilhar .box_redes_sociais_compartilhar div.redes { text-align:center;}
+
+div.box_interacoes_comeco_do_artigo,
+div.interacoes_final_do_artigo{ background: #eee; padding-top: 20px; padding-bottom: 10px; clear:both;}
+
+div.box_interacoes_comeco_do_artigo > h5,
+div.interacoes_final_do_artigo > h5{ font-size: 14px; text-align: center; margin-bottom: 15px; text-transform: uppercase; }
+
+div.box_interacoes_comeco_do_artigo{ margin-bottom:20px;   }
+div.box_interacoes_comeco_do_artigo div.interacoes_artigo,
+div.interacoes_final_do_artigo div.interacoes_artigo{ margin-top:0; margin-bottom:0; }
+
+
+
+@media all and (max-height: 690px) {
+	#conteudo_modal.compartilhar .preview span.mask{ width: 200px; height: 105px; float: left; }
+	#conteudo_modal.compartilhar .preview h1{ font-size: 22px; float: right; width: 266px; }	
+	#conteudo_modal.compartilhar .preview h2{ clear: both; } 
+}

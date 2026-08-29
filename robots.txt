@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://bccoletivo.com.br/sitemap.xml
